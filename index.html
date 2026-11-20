@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Tushpendra Kumar (Tushar) - Full-Stack Developer, AI/LLM Systems Engineer, and B.Tech IT Graduate. Open for Full-Time Roles." />
+  <meta name="keywords" content="Tushpendra Kumar, Tushar, Full Stack Developer, React.js, Node.js, AI Engineer, MERN, Portfolio, Code By Tushar" />
+  <meta name="author" content="Tushpendra Kumar" />
+  
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:title" content="Tushpendra Kumar | Full-Stack & AI Systems Developer" />
+  <meta property="og:description" content="Explore the portfolio of Tushpendra Kumar - Modern web apps, AI integrations, and cloud automation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/codebytushu_logo.png" />
+  
+  <title>Tushpendra Kumar | Software Engineer & AI Systems Developer</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Custom Apple Glass Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Ambient Dynamic Lighting Mesh -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-orb orb-4"></div>
+  </div>
+
+  <!-- Apple Floating Dynamic Island Navigation -->
+  <header class="nav-wrapper">
+    <nav class="glass-nav" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-avatar">
+          <img src="./assets/profile_coder_avatar.png" alt="Tushpendra Developer Avatar" />
+        </div>
+        <span class="brand-title">Tushpendra</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#channel" class="nav-link">CodeByTushu</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn-hire">Hire Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <!-- Developer Aesthetic Avatar (Apple Liquid Glass Frame) -->
+          <div class="hero-avatar-wrapper">
+            <div class="hero-avatar-frame glass-spotlight" title="Laptop + Coffee = Code">
+              <img src="./assets/profile_coder_avatar.png" alt="Tushpendra Kumar Developer Avatar" class="hero-avatar-img" />
+              <div class="hero-avatar-badge">
+                <span class="hero-avatar-badge-dot"></span>
+                <span>Dev</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Availability Badge -->
+          <div class="status-badge-wrapper">
+            <div class="glass-status-pill">
+              <span class="status-dot"></span>
+              <span>Available for Immediate Joining &bull; B.Tech IT 2026</span>
+            </div>
+          </div>
+
+          <!-- Titles -->
+          <h1 class="hero-name">Tushpendra Kumar</h1>
+          <h2 class="hero-role">Software Developer &bull; Full-Stack &bull; AI Systems</h2>
+
+          <p class="hero-desc">
+            Passionate software engineer with hands-on expertise building production-grade web platforms with <strong>React.js, Node.js, Express, MongoDB & MySQL</strong>, and integrating <strong>Gemini & OpenAI LLMs</strong>. Completed a <strong>6-month Linux & Automation internship</strong> with practical DevOps and system administration experience.
+          </p>
+
+          <!-- Primary Actions -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary-glass">
+              <span>Explore My Work</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="./assets/Tushpendra_Kumar_Resume.pdf" target="_blank" download="Tushpendra_Kumar_Resume.pdf" class="btn-secondary-glass">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download CV (PDF)</span>
+            </a>
+            <a href="#contact" class="btn-secondary-glass">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="hero-socials">
+            <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="social-glass-pill">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/tushpendra-kumar-08a56925b/" target="_blank" rel="noopener noreferrer" class="social-glass-pill">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://leetcode.com/u/TushpendraKumar/" target="_blank" rel="noopener noreferrer" class="social-glass-pill">
+              <svg viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.874 5.874 0 0 0 .349 1.017 5.938 5.938 0 0 0 .584.992l2.454 3.067a1.375 1.375 0 1 0 2.15-1.72l-2.454-3.067a3.18 3.18 0 0 1-.314-.533 3.125 3.125 0 0 1-.188-.546 2.78 2.78 0 0 1-.031-1.191 2.82 2.82 0 0 1 .647-1.127l3.854-4.126 5.406-5.788a1.374 1.374 0 0 0-.962-2.448zM19.38 8.01a1.375 1.375 0 0 0-.96 2.36l-5.69 6.09a2.82 2.82 0 0 1-2.057.9 2.82 2.82 0 0 1-2.057-.9l-1.375-1.472a1.375 1.375 0 1 0-2.006 1.874l1.375 1.472a5.57 5.57 0 0 0 4.063 1.777 5.57 5.57 0 0 0 4.063-1.777l5.69-6.09a1.375 1.375 0 0 0-1.043-2.244z"/></svg>
+              <span>LeetCode</span>
+            </a>
+            <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="social-glass-pill" style="color: #ff5252;">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span>YouTube</span>
+            </a>
+            <a href="mailto:tushpendrakumar@gmail.com" class="social-glass-pill">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>tushpendrakumar@gmail.com</span>
+            </a>
+            <a href="tel:+917055072196" class="social-glass-pill">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>+91-7055072196</span>
+            </a>
+          </div>
+
+          <!-- Glass Metrics Counters -->
+          <div class="hero-stats-grid">
+            <div class="glass-panel glass-spotlight stat-card">
+              <div class="stat-number">6+ Mos</div>
+              <div class="stat-label">Industry Internship Experience</div>
+            </div>
+            <div class="glass-panel glass-spotlight stat-card">
+              <div class="stat-number">4+</div>
+              <div class="stat-label">Full-Stack & AI Platforms Built</div>
+            </div>
+            <div class="glass-panel glass-spotlight stat-card">
+              <div class="stat-number">1st Place</div>
+              <div class="stat-label">Hackathon 2023 Winner</div>
+            </div>
+            <div class="glass-panel glass-spotlight stat-card">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Corporate Pipeline Automations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & CAREER AIM SECTION (Apple Bento Grid) -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Career Vision & Identity</span>
+          <h2 class="section-title">Engineering Excellence with Purpose</h2>
+          <p class="section-desc">Bridging intuitive user interfaces with resilient backends and generative AI capabilities.</p>
+        </div>
+
+        <div class="about-bento">
+          <!-- Main Narrative Card -->
+          <div class="glass-panel glass-spotlight about-main-card">
+            <div>
+              <div class="about-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Full-Stack & Systems Mindset</span>
+              </div>
+              <h3 class="about-quote">"I write clean, maintainable code designed to scale, solve real problems, and deliver delight."</h3>
+              <p class="about-text">
+                I am a tech-driven <strong>B.Tech Information Technology student (2022–2026)</strong> at Galgotias College of Engineering & Technology. My passion lies in modern software engineering — from architecting full-stack web applications with React.js and Node.js to automating cloud infrastructure and orchestrating LLM prompt pipelines.
+              </p>
+              <p class="about-text">
+                During my 6-month internship at <strong>Fostering Linux Services</strong>, I worked directly with Linux environments, system monitoring, and Shell automation, cutting manual operational triage time by 35%. I thrive when given complex technical problems where I can engineer end-to-end solutions.
+              </p>
+            </div>
+
+            <!-- Career Aim Highlight -->
+            <div class="career-aim-box">
+              <div class="career-aim-title">My Primary Aim & Target</div>
+              <div class="career-aim-text">
+                Seeking a full-time role as a <strong>Frontend Developer, Backend Developer, or Full-Stack Engineer</strong>. I want to contribute to high-velocity engineering teams, build impactful digital products, and grow alongside industry leaders.
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Bento Feature Cards -->
+          <div class="about-side-cards">
+            <div class="glass-panel glass-spotlight side-feature-card">
+              <div class="feature-icon-bubble">⚡</div>
+              <h4 class="side-feature-title">Fast, Modular Full-Stack Engineering</h4>
+              <p class="side-feature-desc">
+                Specialized in component-driven UI with React, state management, REST API microservices with Node.js, and relational / NoSQL database modeling.
+              </p>
+            </div>
+
+            <div class="glass-panel glass-spotlight side-feature-card">
+              <div class="feature-icon-bubble">🤖</div>
+              <h4 class="side-feature-title">Generative AI & LLM Integration</h4>
+              <p class="side-feature-desc">
+                Experienced with Google Gemini and OpenAI APIs, prompt chains, token streaming, automated resume ATS parsing, and custom AI agents.
+              </p>
+            </div>
+
+            <div class="glass-panel glass-spotlight side-feature-card">
+              <div class="feature-icon-bubble">🛡️</div>
+              <h4 class="side-feature-title">Systems & Linux Discipline</h4>
+              <p class="side-feature-desc">
+                Comfortable with Ubuntu/Debian terminal operations, Shell scripting, cron jobs, server uptime monitoring, and writing standard operating procedures (SOPs).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Work Experience</span>
+          <h2 class="section-title">Industry Training & Engineering Roles</h2>
+          <p class="section-desc">Practical hands-on operational work in systems, automation, and infrastructure.</p>
+        </div>
+
+        <div class="glass-panel glass-spotlight experience-card">
+          <div class="exp-header">
+            <div class="exp-role-group">
+              <h3>Linux & Process Automation Intern</h3>
+              <div class="exp-company">Fostering Linux Services Pvt. Ltd.</div>
+            </div>
+            <div class="exp-meta">
+              <div class="exp-duration">Aug 2025 – Jan 2026 (6 Months)</div>
+              <div class="exp-location">Noida / NCR, India &bull; Internship</div>
+            </div>
+          </div>
+
+          <ul class="exp-bullets">
+            <li class="exp-bullet-item">
+              <span class="bullet-dot"></span>
+              <span><strong>Automated Operational Pipelines:</strong> Engineered custom Shell and Python scripts for operational data extraction and server health logging, reducing manual monitoring effort by <strong>35%</strong>.</span>
+            </li>
+            <li class="exp-bullet-item">
+              <span class="bullet-dot"></span>
+              <span><strong>System Administration:</strong> Handled day-to-day Linux administration tasks, including user access controls, permissions management, system resource alerts, and maintained <strong>99%+ operational uptime</strong>.</span>
+            </li>
+            <li class="exp-bullet-item">
+              <span class="bullet-dot"></span>
+              <span><strong>Web Server & Deployment Workflows:</strong> Assisted with Nginx reverse proxy configuration, cron automation schedules, and verified API triggers for data synchronization.</span>
+            </li>
+            <li class="exp-bullet-item">
+              <span class="bullet-dot"></span>
+              <span><strong>Technical Documentation:</strong> Authored structured Standard Operating Procedures (SOPs) and technical runbooks to guide cross-departmental incident triage and resolution.</span>
+            </li>
+          </ul>
+
+          <div class="exp-tags">
+            <span class="exp-tag">Linux (Ubuntu/Debian)</span>
+            <span class="exp-tag">Shell Scripting (Bash)</span>
+            <span class="exp-tag">Python Automation</span>
+            <span class="exp-tag">Nginx</span>
+            <span class="exp-tag">System Monitoring</span>
+            <span class="exp-tag">Cron Jobs</span>
+            <span class="exp-tag">SOP Runbooks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION (Bento Matrix) -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">Core Skills & Modern Toolchain</h2>
+          <p class="section-desc">Comprehensive capabilities spanning frontend, backend, AI orchestration, and cloud.</p>
+        </div>
+
+        <div class="skills-bento-grid">
+          <!-- Card 1: Core Languages -->
+          <div class="glass-panel glass-spotlight skill-bento-card">
+            <div class="skill-category-icon">💻</div>
+            <h3 class="skill-category-title">Programming Languages</h3>
+            <p class="skill-category-subtitle">Strong algorithmic and software foundations.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">JavaScript (ES6+)</span>
+              <span class="skill-chip featured">Java</span>
+              <span class="skill-chip featured">Python</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">PHP</span>
+              <span class="skill-chip">HTML5 / CSS3</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Frontend Engineering -->
+          <div class="glass-panel glass-spotlight skill-bento-card">
+            <div class="skill-category-icon">🎨</div>
+            <h3 class="skill-category-title">Frontend Engineering</h3>
+            <p class="skill-category-subtitle">Building fluid, responsive, accessible interfaces.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">React.js</span>
+              <span class="skill-chip">React Hooks</span>
+              <span class="skill-chip">React Router</span>
+              <span class="skill-chip">Tailwind CSS</span>
+              <span class="skill-chip">Glassmorphic UI</span>
+              <span class="skill-chip">State Management</span>
+              <span class="skill-chip">Material UI</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Backend & APIs -->
+          <div class="glass-panel glass-spotlight skill-bento-card">
+            <div class="skill-category-icon">⚙️</div>
+            <h3 class="skill-category-title">Backend & Microservices</h3>
+            <p class="skill-category-subtitle">Scalable server architectures and robust APIs.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Node.js</span>
+              <span class="skill-chip featured">Express.js</span>
+              <span class="skill-chip">RESTful APIs</span>
+              <span class="skill-chip">JWT Authentication</span>
+              <span class="skill-chip">Socket.IO</span>
+              <span class="skill-chip">FastAPI (Basics)</span>
+              <span class="skill-chip">CORS & Security</span>
+            </div>
+          </div>
+
+          <!-- Card 4: AI & LLM Systems -->
+          <div class="glass-panel glass-spotlight skill-bento-card">
+            <div class="skill-category-icon">🧠</div>
+            <h3 class="skill-category-title">AI & GenAI Tooling</h3>
+            <p class="skill-category-subtitle">Practical integration of modern foundation models.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Google Gemini API</span>
+              <span class="skill-chip featured">OpenAI / GPT APIs</span>
+              <span class="skill-chip">Prompt Engineering</span>
+              <span class="skill-chip">Token Streaming</span>
+              <span class="skill-chip">AI Agent Pipelines</span>
+              <span class="skill-chip">ATS Resume Parsing</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Databases & Storage -->
+          <div class="glass-panel glass-spotlight skill-bento-card">
+            <div class="skill-category-icon">🗄️</div>
+            <h3 class="skill-category-title">Databases & Storage</h3>
+            <p class="skill-category-subtitle">Relational schema design and document stores.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">MySQL</span>
+              <span class="skill-chip featured">MongoDB</span>
+              <span class="skill-chip">Relational Schemas</span>
+              <span class="skill-chip">Firebase Firestore</span>
+              <span class="skill-chip">JSON Pipelines</span>
+            </div>
+          </div>
+
+          <!-- Card 6: DevOps, Cloud & Tools -->
+          <div class="glass-panel glass-spotlight skill-bento-card">
+            <div class="skill-category-icon">🚀</div>
+            <h3 class="skill-category-title">DevOps & Cloud Tools</h3>
+            <p class="skill-category-subtitle">Deployment reliability, testing and version control.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Linux (Ubuntu/Debian)</span>
+              <span class="skill-chip featured">Git & GitHub</span>
+              <span class="skill-chip">Postman (API Testing)</span>
+              <span class="skill-chip">Vercel & Netlify</span>
+              <span class="skill-chip">Nginx Basics</span>
+              <span class="skill-chip">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SHOWCASE SECTION -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio Highlights</span>
+          <h2 class="section-title">Featured Engineering Projects</h2>
+          <p class="section-desc">Production web platforms, intelligent AI copilots, and DevOps monitoring systems.</p>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="projects-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="ai">AI & GenAI</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="devops">DevOps & Systems</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: JobAI -->
+          <article class="glass-panel glass-spotlight project-card" data-category="ai fullstack">
+            <div>
+              <div class="project-top-meta">
+                <span class="project-badge badge-ai">GenAI & SaaS</span>
+                <div class="project-links-quick">
+                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">JobAI – AI Career Copilot</h3>
+              <div class="project-tagline">15-Screen SaaS Career & Resume Optimization Platform</div>
+              <p class="project-description">
+                An intelligent career platform engineered for job seekers, integrating real-time LLM prompt chains with dynamic scoring algorithms.
+              </p>
+              <ul class="project-highlights">
+                <li>Features ATS resume analyzer, AI cover letter generator, job matching engine, and live Kanban tracker.</li>
+                <li>Built a live resume builder with instantaneous A4 PDF export capabilities.</li>
+                <li>Structured client-side service layer handling dynamic JSON schemas and token streaming.</li>
+              </ul>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Google Gemini API</span>
+              <span class="tech-tag">OpenAI API</span>
+              <span class="tech-tag">Prompt Engineering</span>
+              <span class="tech-tag">Netlify SPA</span>
+            </div>
+          </article>
+
+          <!-- Project 2: OpsPulse -->
+          <article class="glass-panel glass-spotlight project-card" data-category="devops fullstack">
+            <div>
+              <div class="project-top-meta">
+                <span class="project-badge badge-devops">DevOps & Cloud</span>
+                <div class="project-links-quick">
+                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">OpsPulse – Cloud Observability</h3>
+              <div class="project-tagline">DevOps Fleet Management & Incident Monitoring Dashboard</div>
+              <p class="project-description">
+                A modern infrastructure monitoring dashboard replicating enterprise observability systems like Datadog and Grafana.
+              </p>
+              <ul class="project-highlights">
+                <li>Simulated cluster node telemetry, container fleet health, and CI/CD build pipelines.</li>
+                <li>Designed a 22-entity relational database schema mapping multi-tenant cloud resources.</li>
+                <li>Integrated multi-role Role-Based Access Control (Admin, DevOps, Operator, Viewer).</li>
+              </ul>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Vite</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">REST APIs</span>
+              <span class="tech-tag">Schema Design</span>
+              <span class="tech-tag">RBAC</span>
+            </div>
+          </article>
+
+          <!-- Project 3: CodeByTushu Platform -->
+          <article class="glass-panel glass-spotlight project-card" data-category="fullstack ai">
+            <div>
+              <div class="project-top-meta">
+                <span class="project-badge badge-fullstack">Production Platform</span>
+                <div class="project-links-quick">
+                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Website" aria-label="Live Demo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">CodeByTushu – EdTech & AI Agent</h3>
+              <div class="project-tagline">Full-Stack Digital Platform with Real-Time LLM Microservice</div>
+              <p class="project-description">
+                A live production edtech platform featuring DSA guides, video courses, digital merchandise store, and an embedded streaming AI mentor.
+              </p>
+              <ul class="project-highlights">
+                <li>Developed real-time AI Agent microservice using Node.js, Socket.IO, and Google Gemini API.</li>
+                <li>Implemented token-streaming responses, prompt conditioning, and persistent database session logging.</li>
+                <li>Built automated order fulfillment workflows, transactional email systems, and role-based admin controls.</li>
+              </ul>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Socket.IO</span>
+              <span class="tech-tag">Gemini API</span>
+              <span class="tech-tag">PHP 8+</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </article>
+
+          <!-- Project 4: LeetCode AI Automation Studio -->
+          <article class="glass-panel glass-spotlight project-card" data-category="ai devops">
+            <div>
+              <div class="project-top-meta">
+                <span class="project-badge badge-ai">Pipeline & Media</span>
+                <div class="project-links-quick">
+                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">LeetCode AI Studio Pipeline</h3>
+              <div class="project-tagline">Autonomous Multi-Stage Algorithmic Content & Video Generation</div>
+              <p class="project-description">
+                An automated Python pipeline that parses daily LeetCode algorithmic challenges, validates solutions, generates AI voiceover narration, and orchestrates rendering.
+              </p>
+              <ul class="project-highlights">
+                <li>Automated problem extraction, testcase verification, and optimal Big-O complexity analysis.</li>
+                <li>Dynamic scene builder with timed code highlights, subtitle generation, and video composition.</li>
+                <li>Modular batch processor designed for zero-touch daily publishing.</li>
+              </ul>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python 3</span>
+              <span class="tech-tag">Gemini LLM API</span>
+              <span class="tech-tag">TTS Audio Engine</span>
+              <span class="tech-tag">Video Compositor</span>
+              <span class="tech-tag">Automation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CREDENTIALS SECTION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education & Credentials</h2>
+          <p class="section-desc">Solid technical engineering foundations and academic achievements.</p>
+        </div>
+
+        <div class="edu-grid">
+          <!-- B.Tech -->
+          <div class="glass-panel glass-spotlight edu-card">
+            <div class="edu-year">2022 – 2026 (Final Year)</div>
+            <h3 class="edu-degree">B.Tech in Information Technology</h3>
+            <p class="edu-institution">Galgotias College of Engineering and Technology (GCET), Greater Noida, Uttar Pradesh</p>
+          </div>
+
+          <!-- Diploma -->
+          <div class="glass-panel glass-spotlight edu-card">
+            <div class="edu-year">2019 – 2022</div>
+            <h3 class="edu-degree">Diploma in Electronics</h3>
+            <p class="edu-institution">M. G. Polytechnic, Hathras, Uttar Pradesh</p>
+          </div>
+
+          <!-- Class 12 -->
+          <div class="glass-panel glass-spotlight edu-card">
+            <div class="edu-year">2019</div>
+            <h3 class="edu-degree">Higher Secondary (Class XII – Science)</h3>
+            <p class="edu-institution">K.A.S.R.M.V. Inter College, Atrauli, Aligarh (UP Board)</p>
+          </div>
+
+          <!-- Class 10 -->
+          <div class="glass-panel glass-spotlight edu-card">
+            <div class="edu-year">2017</div>
+            <h3 class="edu-degree">Secondary Education (Class X)</h3>
+            <p class="edu-institution">Saraswati Vidya Mandir IC, Atrauli, Aligarh (UP Board)</p>
+          </div>
+        </div>
+
+        <!-- Trophy Highlight Card -->
+        <div class="glass-panel glass-spotlight achievement-banner">
+          <div class="trophy-icon">🏆</div>
+          <div class="achievement-details">
+            <h4>Winner – Hackathon 2023 Coding Competition</h4>
+            <p>Led end-to-end technical solution architecture, API automation, and high-pressure algorithmic problem solving under tight competition deadlines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODE BY TUSHAR - SPECIAL SHOWCASE SECTION -->
+    <section id="channel" class="cbt-section">
+      <div class="container">
+        <div class="cbt-glass-card glass-spotlight">
+          <!-- Visual / Logo Side -->
+          <div class="cbt-visual">
+            <div class="cbt-logo-container">
+              <img src="./assets/codebytushu_logo.png" alt="CodeByTushu Official Logo" class="cbt-logo-img" onerror="this.src='./assets/logo_badge_round.png'" />
+            </div>
+            <div class="cbt-brand-name">CodeByTushu</div>
+            <span class="cbt-badge-initiative">Personal Tech & Learning Channel</span>
+          </div>
+
+          <!-- Narrative Side -->
+          <div class="cbt-content">
+            <span class="section-tag" style="color: #fa2d48;">Developer Platform & YouTube Channel</span>
+            <h3>Where Algorithmic Mastery Meets Clean Code</h3>
+            <p>
+              <strong>CodeByTushu</strong> is my self-driven knowledge-sharing initiative and developer education ecosystem. Through this channel and platform, I break down complex LeetCode algorithms, build open-source full-stack architectures, and help fellow developers understand modern engineering stacks.
+            </p>
+
+            <!-- Clarification for Recruiters -->
+            <div class="cbt-clarification-box">
+              <strong>Note for Recruiters & Hiring Managers:</strong> This is my personal tech channel (<a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" style="color: #fa2d48; text-decoration: underline;">@codebytushu</a>) demonstrating practical coding competence, software architecture, and passion for engineering — not a freelance client agency.
+            </div>
+
+            <div class="cbt-actions">
+              <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="btn-youtube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>Watch on YouTube (@codebytushu)</span>
+              </a>
+              <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="btn-secondary-glass">
+                <span>Visit CodeByTushu.com</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+              <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="btn-secondary-glass">
+                <span>GitHub Repos</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & GET IN TOUCH SECTION -->
+    <section id="contact">
+      <div class="container">
+        <div class="glass-panel glass-spotlight contact-card-wrap">
+          <span class="section-tag">Let's Connect</span>
+          <h3>Looking for a High-Impact Software Engineer?</h3>
+          <p>
+            I am actively interviewing and ready to join immediately for Full-Stack, Frontend, Backend, or AI-integrated software development roles. Let's discuss how I can contribute to your team!
+          </p>
+
+          <div class="contact-buttons-group">
+            <a href="mailto:tushpendrakumar@gmail.com?subject=Job%20Opportunity%20-%20Interview%20Invitation%20for%20Tushpendra%20Kumar&body=Hi%20Tushpendra,%0D%0A%0D%0AWe%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you%20regarding%20an%20engineering%20opportunity.%0D%0A%0D%0ABest%20regards," class="btn-primary-glass">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Email Me Directly</span>
+            </a>
+
+            <button class="copy-pill-btn" data-copy="tushpendrakumar@gmail.com">
+              <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+              <span>Copy Email</span>
+            </button>
+
+            <a href="tel:+917055072196" class="copy-pill-btn">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>+91-7055072196</span>
+            </a>
+          </div>
+
+          <div class="hero-socials" style="margin-top: 20px;">
+            <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="social-glass-pill" style="color: #ff5252;">YouTube (@codebytushu)</a>
+            <a href="https://www.linkedin.com/in/tushpendra-kumar-08a56925b/" target="_blank" rel="noopener noreferrer" class="social-glass-pill">LinkedIn Profile</a>
+            <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="social-glass-pill">GitHub Repositories</a>
+            <a href="https://leetcode.com/u/TushpendraKumar/" target="_blank" rel="noopener noreferrer" class="social-glass-pill">LeetCode Solutions</a>
+            <a href="./assets/Tushpendra_Kumar_Resume.pdf" target="_blank" download class="social-glass-pill">Download Resume PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Apple Minimal Glass Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        Designed with <strong>Apple Liquid Glass</strong> aesthetics for <strong>Tushpendra Kumar</strong>. Optimized for Vercel & Netlify.
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="footer-link">Back to Top ↑</a>
+        <a href="https://www.youtube.com/@codebytushu" target="_blank" class="footer-link" style="color: #ff5252;">YouTube</a>
+        <a href="https://github.com/Tushpendra-Kumar" target="_blank" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/tushpendra-kumar-08a56925b/" target="_blank" class="footer-link">LinkedIn</a>
+        <span class="footer-link">&copy; <span id="currentYear">2026</span> All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Bubble -->
+  <div id="toastNotice" class="toast-notice" role="status" aria-live="polite"></div>
+
+  <!-- Custom Interaction Script -->
+  <script src="./script.js"></script>
+</body>
+</html>

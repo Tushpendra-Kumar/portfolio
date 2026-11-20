@@ -43,7 +43,7 @@
         <span class="brand-title">Tushpendra</span>
       </a>
 
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -54,6 +54,9 @@
 
       <div class="nav-actions">
         <a href="#contact" class="btn-hire">Hire Me</a>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
       </div>
     </nav>
   </header>
@@ -404,10 +407,10 @@
               <div class="project-top-meta">
                 <span class="project-badge badge-ai">GenAI & SaaS</span>
                 <div class="project-links-quick">
-                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                  <a href="https://github.com/Tushpendra-Kumar/JobAi-CodeByTushu" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
-                  <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
+                  <a href="https://jobai-codebutushu.netlify.app/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                   </a>
                 </div>
@@ -423,13 +426,25 @@
                 <li>Structured client-side service layer handling dynamic JSON schemas and token streaming.</li>
               </ul>
             </div>
-            <div class="project-tech-stack">
-              <span class="tech-tag">React.js</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Google Gemini API</span>
-              <span class="tech-tag">OpenAI API</span>
-              <span class="tech-tag">Prompt Engineering</span>
-              <span class="tech-tag">Netlify SPA</span>
+            <div class="project-card-bottom">
+              <div class="project-tech-stack">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Google Gemini API</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">Prompt Engineering</span>
+                <span class="tech-tag">Netlify SPA</span>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://jobai-codebutushu.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/Tushpendra-Kumar/JobAi-CodeByTushu" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub Code</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -439,10 +454,10 @@
               <div class="project-top-meta">
                 <span class="project-badge badge-devops">DevOps & Cloud</span>
                 <div class="project-links-quick">
-                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                  <a href="https://github.com/Tushpendra-Kumar/Opspulse-Observability-Platform" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
-                  <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
+                  <a href="https://opspulse-observability-platform.netlify.app/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                   </a>
                 </div>
@@ -458,13 +473,25 @@
                 <li>Integrated multi-role Role-Based Access Control (Admin, DevOps, Operator, Viewer).</li>
               </ul>
             </div>
-            <div class="project-tech-stack">
-              <span class="tech-tag">React.js</span>
-              <span class="tech-tag">Vite</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">REST APIs</span>
-              <span class="tech-tag">Schema Design</span>
-              <span class="tech-tag">RBAC</span>
+            <div class="project-card-bottom">
+              <div class="project-tech-stack">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">REST APIs</span>
+                <span class="tech-tag">Schema Design</span>
+                <span class="tech-tag">RBAC</span>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://opspulse-observability-platform.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/Tushpendra-Kumar/Opspulse-Observability-Platform" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub Code</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -474,10 +501,10 @@
               <div class="project-top-meta">
                 <span class="project-badge badge-fullstack">Production Platform</span>
                 <div class="project-links-quick">
-                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                  <a href="https://github.com/Tushpendra-Kumar/CodeByTushu-Portfolio-Showcase" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
-                  <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Website" aria-label="Live Demo">
+                  <a href="https://codebytushu.com/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Website" aria-label="Live Demo">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                   </a>
                 </div>
@@ -493,13 +520,25 @@
                 <li>Built automated order fulfillment workflows, transactional email systems, and role-based admin controls.</li>
               </ul>
             </div>
-            <div class="project-tech-stack">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Socket.IO</span>
-              <span class="tech-tag">Gemini API</span>
-              <span class="tech-tag">PHP 8+</span>
-              <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">JavaScript</span>
+            <div class="project-card-bottom">
+              <div class="project-tech-stack">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Socket.IO</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">PHP 8+</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://codebytushu.com/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  <span>Live Website</span>
+                </a>
+                <a href="https://github.com/Tushpendra-Kumar/CodeByTushu-Portfolio-Showcase" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub Code</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -511,6 +550,9 @@
                 <div class="project-links-quick">
                   <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="icon-link" title="YouTube Channel" aria-label="YouTube Channel">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                   </a>
                 </div>
               </div>
@@ -525,12 +567,24 @@
                 <li>Modular batch processor designed for zero-touch daily publishing.</li>
               </ul>
             </div>
-            <div class="project-tech-stack">
-              <span class="tech-tag">Python 3</span>
-              <span class="tech-tag">Gemini LLM API</span>
-              <span class="tech-tag">TTS Audio Engine</span>
-              <span class="tech-tag">Video Compositor</span>
-              <span class="tech-tag">Automation</span>
+            <div class="project-card-bottom">
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python 3</span>
+                <span class="tech-tag">Gemini LLM API</span>
+                <span class="tech-tag">TTS Audio Engine</span>
+                <span class="tech-tag">Video Compositor</span>
+                <span class="tech-tag">Automation</span>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="btn-project-live" style="background: rgba(255, 77, 77, 0.15); border-color: rgba(255, 77, 77, 0.35); color: #ff5252;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  <span>YouTube Channel</span>
+                </a>
+                <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub Code</span>
+                </a>
+              </div>
             </div>
           </article>
         </div>
@@ -670,18 +724,96 @@
     </section>
   </main>
 
-  <!-- Apple Minimal Glass Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-left">
-        Designed with <strong>Apple Liquid Glass</strong> aesthetics for <strong>Tushpendra Kumar</strong>. Optimized for Vercel & Netlify.
+  <!-- Floating Back to Top Button (Bottom-Left like CodeByTushu.com) -->
+  <button id="backToTopBtn" class="floating-back-to-top" aria-label="Back to Top" title="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- CodeByTushu Style Comprehensive Multi-Column Footer -->
+  <footer class="cbt-footer">
+    <div class="container footer-grid-container">
+      <!-- Col 1: Brand & Bio -->
+      <div class="footer-col footer-col-brand">
+        <div class="f-brand-logo">
+          <span class="f-code-tag">&lt;/&gt;</span>
+          <span class="f-brand-title">CodeByTushu</span>
+        </div>
+        <p class="f-motto">Learn &bull; Build &bull; Share &bull; Grow</p>
+        <p class="f-bio">
+          Empowering developers with quality content, tutorials, and real-world projects. Let's grow together.
+        </p>
       </div>
-      <div class="footer-right">
-        <a href="#hero" class="footer-link">Back to Top ↑</a>
-        <a href="https://www.youtube.com/@codebytushu" target="_blank" class="footer-link" style="color: #ff5252;">YouTube</a>
-        <a href="https://github.com/Tushpendra-Kumar" target="_blank" class="footer-link">GitHub</a>
-        <a href="https://www.linkedin.com/in/tushpendra-kumar-08a56925b/" target="_blank" class="footer-link">LinkedIn</a>
-        <span class="footer-link">&copy; <span id="currentYear">2026</span> All rights reserved.</span>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="f-heading"><span class="f-heading-icon">🔗</span> QUICK LINKS</h4>
+        <ul class="f-links-list">
+          <li><a href="#hero" class="f-link">› Home</a></li>
+          <li><a href="#about" class="f-link">› About & Aim</a></li>
+          <li><a href="#experience" class="f-link">› Experience</a></li>
+          <li><a href="#skills" class="f-link">› Skills</a></li>
+          <li><a href="#projects" class="f-link">› Projects</a></li>
+          <li><a href="#channel" class="f-link">› CodeByTushu Channel</a></li>
+          <li><a href="#contact" class="f-link">› Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Resources & Profiles -->
+      <div class="footer-col">
+        <h4 class="f-heading"><span class="f-heading-icon">📁</span> RESOURCES</h4>
+        <ul class="f-links-list">
+          <li><a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="f-link">› GitHub Profile</a></li>
+          <li><a href="https://www.linkedin.com/in/tushpendra-kumar-08a56925b/" target="_blank" rel="noopener noreferrer" class="f-link">› LinkedIn Profile</a></li>
+          <li><a href="https://leetcode.com/u/TushpendraKumar/" target="_blank" rel="noopener noreferrer" class="f-link">› LeetCode Profile</a></li>
+          <li><a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="f-link">› YouTube Channel</a></li>
+          <li><a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="f-link">› CodeByTushu Platform</a></li>
+          <li><a href="./assets/Tushpendra_Kumar_Resume.pdf" target="_blank" download class="f-link">› Download Resume (PDF)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Connect & Hiring -->
+      <div class="footer-col">
+        <h4 class="f-heading"><span class="f-heading-icon">✉️</span> CONNECT</h4>
+        <div class="f-connect-box">
+          <div class="f-connect-badge">
+            <span class="f-badge-icon">💼</span>
+            <span><strong>Client & Job Opportunities:</strong></span>
+          </div>
+          <a href="mailto:tushpendrakumar@gmail.com" class="f-connect-email">tushpendrakumar@gmail.com</a>
+          <p class="f-connect-role">Open for Frontend, Backend & AI software development roles</p>
+        </div>
+
+        <div class="f-social-grid">
+          <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="f-social-item" style="color: #ff5252;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube</span>
+          </a>
+          <a href="https://www.linkedin.com/in/tushpendra-kumar-08a56925b/" target="_blank" rel="noopener noreferrer" class="f-social-item" style="color: #0077b5;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="f-social-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://leetcode.com/u/TushpendraKumar/" target="_blank" rel="noopener noreferrer" class="f-social-item" style="color: #ffa116;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.874 5.874 0 0 0 .349 1.017 5.938 5.938 0 0 0 .584.992l2.454 3.067a1.375 1.375 0 1 0 2.15-1.72l-2.454-3.067a3.18 3.18 0 0 1-.314-.533 3.125 3.125 0 0 1-.188-.546 2.78 2.78 0 0 1-.031-1.191 2.82 2.82 0 0 1 .647-1.127l3.854-4.126 5.406-5.788a1.374 1.374 0 0 0-.962-2.448zM19.38 8.01a1.375 1.375 0 0 0-.96 2.36l-5.69 6.09a2.82 2.82 0 0 1-2.057.9 2.82 2.82 0 0 1-2.057-.9l-1.375-1.472a1.375 1.375 0 1 0-2.006 1.874l1.375 1.472a5.57 5.57 0 0 0 4.063 1.777 5.57 5.57 0 0 0 4.063-1.777l5.69-6.09a1.375 1.375 0 0 0-1.043-2.244z"/></svg>
+            <span>LeetCode</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slim Copyright Bar (Exact Match to CodeByTushu.com Reference) -->
+    <div class="footer-slim-bar">
+      <div class="container footer-slim-inner">
+        <p class="f-copyright">&copy; 2025 CodeByTushu. All rights reserved.</p>
+        <div class="f-bottom-links">
+          <a href="#hero" class="f-back-top-inline">Back to Top ↑</a>
+        </div>
       </div>
     </div>
   </footer>

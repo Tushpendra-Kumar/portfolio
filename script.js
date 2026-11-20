@@ -130,9 +130,47 @@ document.addEventListener("DOMContentLoaded", () => {
     if (orb2) orb2.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
   });
 
-  // 6. Dynamic Year in Footer
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
+  // 6. Floating Back to Top Button (Show when scrolled > 250px)
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 250) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // 7. Mobile Navigation Toggle Drawer
+  const mobileNavToggle = document.getElementById("mobileNavToggle");
+  const navLinksList = document.getElementById("navLinks");
+
+  if (mobileNavToggle && navLinksList) {
+    mobileNavToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navLinksList.classList.toggle("active");
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!navLinksList.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+        navLinksList.classList.remove("active");
+      }
+    });
+
+    // Close when any navigation link is clicked
+    navLinksList.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinksList.classList.remove("active");
+      });
+    });
   }
 });

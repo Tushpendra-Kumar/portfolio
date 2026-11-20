@@ -59,6 +59,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
   font-size: 16px;
   color-scheme: dark;
 }
@@ -615,6 +616,7 @@ body {
 section {
   padding: 70px 0;
   position: relative;
+  scroll-margin-top: 100px;
 }
 
 .section-header {
@@ -1357,6 +1359,11 @@ section {
 /* ==========================================================================
    CONTACT & REACH OUT SECTION (Apple Glass Callout)
    ========================================================================== */
+
+#contact {
+  padding: 80px 0 100px 0;
+  scroll-margin-top: 110px;
+}
 
 .contact-card-wrap {
   padding: 60px 40px;

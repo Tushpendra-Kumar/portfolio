@@ -1456,17 +1456,17 @@ section {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(15, 20, 30, 0.85);
+  background: rgba(15, 23, 42, 0.82);
   backdrop-filter: blur(24px) saturate(190%);
   -webkit-backdrop-filter: blur(24px) saturate(190%);
-  border: 1.5px solid #f59e0b; /* CodeByTushu Gold */
-  color: #f59e0b;
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  color: var(--accent-cyan);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 999;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65), 0 0 20px rgba(56, 189, 248, 0.25);
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px) scale(0.9);
@@ -1480,10 +1480,11 @@ section {
 }
 
 .floating-back-to-top:hover {
-  background: #f59e0b;
-  color: #0b0f19;
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+  color: #ffffff;
   transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 158, 11, 0.55);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.55);
 }
 
 /* ==========================================================================
@@ -1518,7 +1519,7 @@ section {
 }
 
 .f-code-tag {
-  color: #f59e0b;
+  color: var(--accent-cyan);
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 1.3rem;
@@ -1536,6 +1537,20 @@ section {
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+.f-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  color: #34d399;
+  font-weight: 600;
 }
 
 /* Headings */
@@ -1572,8 +1587,9 @@ section {
 }
 
 .f-link:hover {
-  color: #f59e0b;
+  color: #ffffff;
   transform: translateX(4px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 /* Connect Col */
@@ -1656,17 +1672,10 @@ section {
   color: var(--text-muted);
 }
 
-.f-back-top-inline {
-  font-size: 0.85rem;
-  color: #f59e0b;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color var(--transition-fast);
-}
-
-.f-back-top-inline:hover {
-  color: #ffffff;
-  text-decoration: underline;
+.f-bottom-tag {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
 /* ==========================================================================

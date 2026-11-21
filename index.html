@@ -25,8 +25,9 @@
 </head>
 <body>
 
-  <!-- Ambient Dynamic Lighting Mesh -->
+  <!-- Ambient Dynamic Lighting Mesh & 3D WebGL Canvas Layer -->
   <div class="ambient-canvas" aria-hidden="true">
+    <canvas id="bg3dCanvas" class="bg-3d-canvas"></canvas>
     <div class="ambient-orb orb-1"></div>
     <div class="ambient-orb orb-2"></div>
     <div class="ambient-orb orb-3"></div>
@@ -996,6 +997,27 @@
       </div>
     </div>
   </div>
+
+  <!-- Floating 3D Style Switcher Dock (8 Live Interactive Styles) -->
+  <aside class="theme-switcher-dock glass-panel" id="themeSwitcherDock" aria-label="3D Background Switcher">
+    <div class="switcher-top-row">
+      <div class="switcher-badge-group">
+        <span class="switcher-status-dot"></span>
+        <span class="switcher-title">🌌 8 Live 3D Styles (Click to test):</span>
+      </div>
+      <button class="switcher-minimize-btn" id="switcherToggleBtn" title="Minimize / Expand switcher">&minus;</button>
+    </div>
+    <div class="switcher-buttons" id="switcherButtons">
+      <button class="switcher-btn active" data-mode="cosmic">1. Cosmic Stars</button>
+      <button class="switcher-btn" data-mode="neural">2. AI Neural Synapse</button>
+      <button class="switcher-btn" data-mode="gyroscope">3. Quantum Rings</button>
+      <button class="switcher-btn" data-mode="grid">4. Cyber Wireframe Grid</button>
+      <button class="switcher-btn" data-mode="crystals">5. 3D Floating Crystals</button>
+      <button class="switcher-btn" data-mode="wave">6. Fluid Particle Wave</button>
+      <button class="switcher-btn" data-mode="matrix">7. Cyber Matrix Stream</button>
+      <button class="switcher-btn" data-mode="aurora">8. Apple Aurora Liquid</button>
+    </div>
+  </aside>
 
   <!-- Toast Notification Bubble -->
   <div id="toastNotice" class="toast-notice" role="status" aria-live="polite"></div>

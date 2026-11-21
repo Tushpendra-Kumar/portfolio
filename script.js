@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 10. Live 3D Background Engine with 8 Real-Time Switchable Modes
+  // 10. Live NASA Space Universe 3D Engine (8 Real-Time Deep Space Themes)
   const canvas3d = document.getElementById("bg3dCanvas");
   if (canvas3d) {
     const ctx = canvas3d.getContext("2d");
@@ -381,7 +381,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let height = (canvas3d.height = window.innerHeight);
 
     let mouse = { x: width / 2, y: height / 2, targetX: width / 2, targetY: height / 2 };
-    let currentMode = "cosmic"; // Default mode
+    let currentMode = "hourglass"; // Default to NASA Hourglass Nebula (Ref Image 1)
+    let tick = 0;
 
     window.addEventListener("resize", () => {
       width = canvas3d.width = window.innerWidth;
@@ -394,330 +395,599 @@ document.addEventListener("DOMContentLoaded", () => {
       mouse.targetY = e.clientY;
     });
 
-    // 1. Cosmic Mode State
-    let stars = [];
-    function initCosmic() {
-      stars = [];
-      const numStars = Math.min(160, Math.floor(width / 10));
-      for (let i = 0; i < numStars; i++) {
-        stars.push({
-          x: (Math.random() - 0.5) * width * 1.8,
-          y: (Math.random() - 0.5) * height * 1.8,
-          z: Math.random() * 1000 + 100,
-          size: Math.random() * 2 + 1,
-          color: Math.random() > 0.4 ? "#38bdf8" : (Math.random() > 0.5 ? "#a855f7" : "#34d399"),
-          speed: Math.random() * 1.2 + 0.5
-        });
+    // Helper: Draw Hubble/James Webb 4-point or 6-point Diffraction Spike Star
+    function drawDiffractionStar(x, y, size, color, spikeLen, alpha = 1, points = 4) {
+      if (x < -50 || x > width + 50 || y < -50 || y > height + 50) return;
+      ctx.save();
+      ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
+
+      // Core radial glow
+      const g = ctx.createRadialGradient(x, y, 0, x, y, size * 2.8);
+      g.addColorStop(0, "#ffffff");
+      g.addColorStop(0.3, color);
+      g.addColorStop(1, "transparent");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(x, y, size * 2.8, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Diffraction Spikes
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x - spikeLen, y);
+      ctx.lineTo(x + spikeLen, y);
+      ctx.moveTo(x, y - spikeLen);
+      ctx.lineTo(x, y + spikeLen);
+      if (points === 6) {
+        const diag = spikeLen * 0.7;
+        ctx.moveTo(x - diag, y - diag);
+        ctx.lineTo(x + diag, y + diag);
+        ctx.moveTo(x + diag, y - diag);
+        ctx.lineTo(x - diag, y + diag);
       }
+      ctx.stroke();
+
+      // Sharp white inner cross
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 0.8;
+      ctx.beginPath();
+      ctx.moveTo(x - spikeLen * 0.45, y);
+      ctx.lineTo(x + spikeLen * 0.45, y);
+      ctx.moveTo(x, y - spikeLen * 0.45);
+      ctx.lineTo(x, y + spikeLen * 0.45);
+      ctx.stroke();
+
+      ctx.restore();
     }
 
-    // 2. Neural Net State
-    let nodes = [];
-    function initNeural() {
-      nodes = [];
-      const numNodes = Math.min(65, Math.floor(width / 24));
-      for (let i = 0; i < numNodes; i++) {
-        nodes.push({
+    // Persistent Cosmic Starfield
+    let backgroundStars = [];
+    function initStarfield() {
+      backgroundStars = [];
+      const count = Math.min(220, Math.floor(width / 7));
+      const starColors = ["#ffffff", "#93c5fd", "#e0e7ff", "#fde047", "#fca5a5", "#38bdf8"];
+      for (let i = 0; i < count; i++) {
+        backgroundStars.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.8,
-          vy: (Math.random() - 0.5) * 0.8,
-          radius: Math.random() * 2.5 + 1.5,
-          color: Math.random() > 0.5 ? "rgba(56, 189, 248, " : "rgba(168, 85, 247, "
+          size: Math.random() * 1.8 + 0.6,
+          color: starColors[Math.floor(Math.random() * starColors.length)],
+          twinkleSpeed: Math.random() * 0.04 + 0.01,
+          twinklePhase: Math.random() * Math.PI * 2,
+          hasSpikes: Math.random() > 0.82,
+          spikeLen: Math.random() * 18 + 8
         });
       }
     }
 
-    // 3. Gyroscope Rings State
-    let gyroAngle = 0;
-
-    // 4. Cyber Grid State
-    let gridOffset = 0;
-
-    // 5. 3D Crystals State
-    let crystals = [];
-    function initCrystals() {
-      crystals = [];
-      const numCrystals = 7;
-      for (let i = 0; i < numCrystals; i++) {
-        crystals.push({
-          x: (Math.random() - 0.5) * width * 0.9 + width / 2,
-          y: (Math.random() - 0.5) * height * 0.9 + height / 2,
-          size: Math.random() * 35 + 25,
-          rotX: Math.random() * Math.PI,
-          rotY: Math.random() * Math.PI,
-          rotZ: Math.random() * Math.PI,
-          vRotX: (Math.random() - 0.5) * 0.015,
-          vRotY: (Math.random() - 0.5) * 0.015,
-          color: Math.random() > 0.5 ? "#38bdf8" : "#818cf8"
-        });
-      }
-    }
-
-    // 6. Particle Wave State
-    let waveStep = 0;
-
-    // 7. Matrix State
-    let matrixCols = [];
-    function initMatrix() {
-      matrixCols = [];
-      const colWidth = 24;
-      const count = Math.floor(width / colWidth);
+    // 1. Hourglass Nebula State (Ref Image 1: MyCn 18)
+    let hourglassDust = [];
+    function initHourglass() {
+      hourglassDust = [];
+      const count = 120;
       for (let i = 0; i < count; i++) {
-        matrixCols.push({
-          x: i * colWidth,
-          y: Math.random() * -height,
-          speed: Math.random() * 4 + 2,
-          chars: "0101101001<>{}[]/=".split("")
+        const theta = Math.random() * Math.PI * 2;
+        const u = Math.random() * 2 - 1; // vertical coordinate
+        const r = (1 + Math.abs(u) * 1.8) * (80 + Math.random() * 70);
+        hourglassDust.push({
+          u: u,
+          angle: theta,
+          dist: r,
+          vAngle: (Math.random() - 0.5) * 0.008,
+          size: Math.random() * 2.2 + 0.8,
+          color: Math.random() > 0.4 ? "#f97316" : (Math.random() > 0.5 ? "#fb923c" : "#38bdf8")
         });
       }
     }
 
-    // 8. Aurora Liquid State
-    let auroraTick = 0;
+    // 2. Horsehead Nebula State (Ref Image 2: Barnard 33)
+    let horseheadClouds = [];
+    function initHorsehead() {
+      horseheadClouds = [];
+      for (let i = 0; i < 35; i++) {
+        horseheadClouds.push({
+          x: (Math.random() * 0.9 + 0.05) * width,
+          y: (Math.random() * 0.7 + 0.3) * height,
+          radius: Math.random() * 140 + 70,
+          driftX: (Math.random() - 0.5) * 0.15,
+          driftY: (Math.random() - 0.5) * 0.08,
+          alpha: Math.random() * 0.45 + 0.3
+        });
+      }
+    }
+
+    // 3. Mystic Pillars State (Ref Image 3: Pillars of Creation)
+    let pillarStars = [];
+    function initPillars() {
+      pillarStars = [];
+      for (let i = 0; i < 16; i++) {
+        pillarStars.push({
+          x: width * 0.3 + (Math.random() - 0.5) * width * 0.45,
+          y: height * 0.2 + Math.random() * height * 0.6,
+          size: Math.random() * 3 + 1.5,
+          spikeLen: Math.random() * 26 + 14,
+          color: Math.random() > 0.3 ? "#fef08a" : "#f59e0b",
+          pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    // 4. Butterfly Nebula State (Ref Image 4: NGC 6302)
+    let butterflyParticles = [];
+    function initButterfly() {
+      butterflyParticles = [];
+      const count = 160;
+      for (let i = 0; i < count; i++) {
+        const side = Math.random() > 0.5 ? 1 : -1;
+        butterflyParticles.push({
+          side: side,
+          dist: Math.random() * 350 + 20,
+          spreadAngle: (Math.random() - 0.5) * 1.1 + (side > 0 ? 0 : Math.PI),
+          speed: Math.random() * 0.6 + 0.2,
+          size: Math.random() * 2.5 + 0.8,
+          color: Math.random() > 0.5 ? "#38bdf8" : (Math.random() > 0.5 ? "#c084fc" : "#2dd4bf")
+        });
+      }
+    }
+
+    // 5. Galaxy Spiral State
+    let galaxyStars = [];
+    function initGalaxy() {
+      galaxyStars = [];
+      const count = 300;
+      for (let i = 0; i < count; i++) {
+        const arm = (i % 2) * Math.PI;
+        const dist = Math.pow(Math.random(), 1.5) * 360 + 15;
+        const angle = arm + dist * 0.014 + (Math.random() - 0.5) * 0.4;
+        galaxyStars.push({
+          dist: dist,
+          angle: angle,
+          speed: 0.003 + (1 / (dist + 50)) * 0.3,
+          size: Math.random() * 2 + 0.8,
+          color: dist < 80 ? "#fef08a" : (dist < 220 ? "#93c5fd" : "#c4b5fd")
+        });
+      }
+    }
+
+    // 6. Stellar Nursery State
+    let nurseryNodes = [];
+    function initNursery() {
+      nurseryNodes = [];
+      for (let i = 0; i < 28; i++) {
+        nurseryNodes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          r: Math.random() * 160 + 80,
+          color: Math.random() > 0.6 ? "#06b6d4" : (Math.random() > 0.4 ? "#8b5cf6" : "#10b981")
+        });
+      }
+    }
+
+    // 7. Supernova Remnant State
+    let supernovaFilaments = [];
+    function initSupernova() {
+      supernovaFilaments = [];
+      const count = 48;
+      for (let i = 0; i < count; i++) {
+        const ang = (i / count) * Math.PI * 2;
+        supernovaFilaments.push({
+          ang: ang,
+          len: Math.random() * 180 + 120,
+          color: Math.random() > 0.5 ? "#38bdf8" : (Math.random() > 0.5 ? "#f97316" : "#e879f9"),
+          waviness: Math.random() * 0.08 + 0.02
+        });
+      }
+    }
+
+    // 8. Event Horizon Black Hole State
+    let accretionParticles = [];
+    function initBlackHole() {
+      accretionParticles = [];
+      const count = 220;
+      for (let i = 0; i < count; i++) {
+        const dist = Math.random() * 220 + 85;
+        accretionParticles.push({
+          dist: dist,
+          angle: Math.random() * Math.PI * 2,
+          speed: (1 / Math.sqrt(dist)) * 1.8,
+          size: Math.random() * 2.2 + 0.8,
+          color: dist < 120 ? "#60a5fa" : (dist < 180 ? "#f59e0b" : "#ef4444")
+        });
+      }
+    }
 
     function initCurrentMode() {
-      if (currentMode === "cosmic") initCosmic();
-      else if (currentMode === "neural") initNeural();
-      else if (currentMode === "crystals") initCrystals();
-      else if (currentMode === "matrix") initMatrix();
+      initStarfield();
+      if (currentMode === "hourglass") initHourglass();
+      else if (currentMode === "horsehead") initHorsehead();
+      else if (currentMode === "pillars") initPillars();
+      else if (currentMode === "butterfly") initButterfly();
+      else if (currentMode === "galaxy") initGalaxy();
+      else if (currentMode === "nursery") initNursery();
+      else if (currentMode === "supernova") initSupernova();
+      else if (currentMode === "blackhole") initBlackHole();
     }
 
-    initCosmic();
+    initCurrentMode();
 
-    // Main 60 FPS Render Loop
+    // MAIN 60 FPS RENDER LOOP
     function renderLoop() {
+      tick++;
       mouse.x += (mouse.targetX - mouse.x) * 0.05;
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
       ctx.clearRect(0, 0, width, height);
 
-      const fov = 400;
+      // Deep Space Void Base Gradient
+      const baseGrad = ctx.createRadialGradient(
+        width / 2 + (mouse.x - width / 2) * 0.1,
+        height / 2 + (mouse.y - height / 2) * 0.1,
+        100,
+        width / 2,
+        height / 2,
+        Math.max(width, height) * 0.8
+      );
+      baseGrad.addColorStop(0, "#080c18");
+      baseGrad.addColorStop(0.5, "#04060d");
+      baseGrad.addColorStop(1, "#020307");
+      ctx.fillStyle = baseGrad;
+      ctx.fillRect(0, 0, width, height);
 
-      if (currentMode === "cosmic") {
-        // Mode 1: 3D Cosmic Space
-        const offsetX = (mouse.x - width / 2) * 0.2;
-        const offsetY = (mouse.y - height / 2) * 0.2;
+      // Draw Twinkling Background Stars (Fixed in deep space)
+      const parallaxX = (mouse.x - width / 2) * 0.03;
+      const parallaxY = (mouse.y - height / 2) * 0.03;
 
-        stars.forEach((star) => {
-          star.z -= star.speed;
-          if (star.z <= 0) star.z = 1000;
+      backgroundStars.forEach((star) => {
+        star.twinklePhase += star.twinkleSpeed;
+        const alpha = 0.4 + Math.sin(star.twinklePhase) * 0.4;
+        const sx = star.x - parallaxX;
+        const sy = star.y - parallaxY;
 
-          const k = fov / star.z;
-          const sx = (star.x - offsetX) * k + width / 2;
-          const sy = (star.y - offsetY) * k + height / 2;
+        if (star.hasSpikes && alpha > 0.6) {
+          drawDiffractionStar(sx, sy, star.size, star.color, star.spikeLen * (0.8 + alpha * 0.4), alpha * 0.9, 4);
+        } else {
+          ctx.beginPath();
+          ctx.arc(sx, sy, star.size, 0, Math.PI * 2);
+          ctx.fillStyle = star.color;
+          ctx.globalAlpha = alpha;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+        }
+      });
 
-          if (sx >= 0 && sx < width && sy >= 0 && sy < height) {
-            const alpha = Math.min(1, (1000 - star.z) / 400);
-            const r = Math.max(0.8, (1 - star.z / 1000) * star.size * 2.5);
+      const cx = width / 2 + (mouse.x - width / 2) * 0.08;
+      const cy = height / 2 + (mouse.y - height / 2) * 0.08;
 
+      // ========================================================
+      // 1. HOURGLASS NEBULA (Ref Image 1: MyCn 18 - "Cosmic Eye")
+      // ========================================================
+      if (currentMode === "hourglass") {
+        // Outer concentric expanding amber rings
+        const rings = [240, 190, 140, 95];
+        const ringGlowGrad = ctx.createRadialGradient(cx, cy, 20, cx, cy, 320);
+        ringGlowGrad.addColorStop(0, "rgba(249, 115, 22, 0.2)");
+        ringGlowGrad.addColorStop(0.5, "rgba(234, 88, 12, 0.08)");
+        ringGlowGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = ringGlowGrad;
+        ctx.fillRect(0, 0, width, height);
+
+        // Upper & Lower expanding cones
+        [-1, 1].forEach((dir) => {
+          rings.forEach((r, idx) => {
+            const yOffset = dir * (idx * 55 + 60) + Math.sin(tick * 0.02 + idx) * 5;
+            const rx = r * (1 + idx * 0.15);
+            const ry = r * 0.38;
+
+            ctx.save();
+            ctx.translate(cx, cy + yOffset);
             ctx.beginPath();
-            ctx.arc(sx, sy, r, 0, Math.PI * 2);
-            ctx.fillStyle = star.color;
-            ctx.globalAlpha = alpha * 0.85;
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = star.color;
-            ctx.fill();
-            ctx.shadowBlur = 0;
-            ctx.globalAlpha = 1;
-          }
+            ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = idx === 0 ? "rgba(251, 146, 60, 0.75)" : "rgba(249, 115, 22, 0.55)";
+            ctx.lineWidth = 2.2;
+            ctx.shadowColor = "#f97316";
+            ctx.shadowBlur = 18;
+            ctx.stroke();
+            ctx.restore();
+          });
         });
-      } else if (currentMode === "neural") {
-        // Mode 2: AI Neural Synapse Network
-        nodes.forEach((node) => {
+
+        // Hourglass Stardust stream
+        hourglassDust.forEach((p) => {
+          p.angle += p.vAngle;
+          const px = cx + Math.cos(p.angle) * p.dist;
+          const py = cy + p.u * (height * 0.4) + Math.sin(tick * 0.02 + p.dist) * 15;
+          ctx.beginPath();
+          ctx.arc(px, py, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur = 8;
+          ctx.fill();
+        });
+        ctx.shadowBlur = 0;
+
+        // Central Cosmic Eye (Cyan / Emerald pupil with hot white star)
+        const eyeGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 65);
+        eyeGrad.addColorStop(0, "#ffffff");
+        eyeGrad.addColorStop(0.2, "#06b6d4");
+        eyeGrad.addColorStop(0.5, "rgba(16, 185, 129, 0.6)");
+        eyeGrad.addColorStop(0.85, "rgba(249, 115, 22, 0.4)");
+        eyeGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = eyeGrad;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, 75, 42, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Central Pulsar with 6-point diffraction spikes
+        drawDiffractionStar(cx, cy, 3.5, "#38bdf8", 45, 1, 6);
+      }
+
+      // ========================================================
+      // 2. HORSEHEAD NEBULA (Ref Image 2: Barnard 33 - "Crimson Void")
+      // ========================================================
+      else if (currentMode === "horsehead") {
+        // Dramatic Crimson H-Alpha Hydrogen Glow
+        const crimsonGrad = ctx.createLinearGradient(0, 0, 0, height);
+        crimsonGrad.addColorStop(0, "rgba(225, 29, 72, 0.45)");
+        crimsonGrad.addColorStop(0.4, "rgba(190, 18, 60, 0.35)");
+        crimsonGrad.addColorStop(0.75, "rgba(136, 19, 55, 0.2)");
+        crimsonGrad.addColorStop(1, "rgba(6, 182, 212, 0.25)"); // Lower Cyan reflection base
+        ctx.fillStyle = crimsonGrad;
+        ctx.fillRect(0, 0, width, height);
+
+        // Volumetric Dark Cosmic Dust Cloud Silhouettes (Barnard 33 Pillar)
+        horseheadClouds.forEach((c, idx) => {
+          c.x += c.driftX;
+          c.y += c.driftY;
+          if (c.x < -100) c.x = width + 100;
+          if (c.x > width + 100) c.x = -100;
+
+          const g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, c.radius);
+          g.addColorStop(0, "rgba(8, 6, 12, 0.85)");
+          g.addColorStop(0.65, "rgba(15, 10, 20, 0.65)");
+          g.addColorStop(1, "transparent");
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        // Majestic Alnitak Supergiant Star (Top Left with 4-point spikes)
+        drawDiffractionStar(width * 0.22, height * 0.18, 5, "#ffffff", 55, 0.95, 4);
+        drawDiffractionStar(width * 0.78, height * 0.35, 4, "#93c5fd", 35, 0.85, 4);
+        drawDiffractionStar(width * 0.15, height * 0.82, 4.5, "#06b6d4", 42, 0.9, 4);
+      }
+
+      // ========================================================
+      // 3. MYSTIC PILLARS (Ref Image 3: Pillars of Creation)
+      // ========================================================
+      else if (currentMode === "pillars") {
+        // Interstellar Bronze & Slate Dust Towers
+        const pillarGrad = ctx.createRadialGradient(cx, cy * 0.8, 50, cx, cy, width * 0.6);
+        pillarGrad.addColorStop(0, "rgba(217, 119, 6, 0.28)");
+        pillarGrad.addColorStop(0.4, "rgba(180, 83, 9, 0.18)");
+        pillarGrad.addColorStop(0.7, "rgba(30, 41, 59, 0.25)");
+        pillarGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = pillarGrad;
+        ctx.fillRect(0, 0, width, height);
+
+        // Tower Columns rising from bottom
+        const colWidths = [140, 180, 120];
+        [-1, 0, 1].forEach((colIdx, i) => {
+          const colX = cx + colIdx * 200;
+          const colW = colWidths[i];
+          const colGrad = ctx.createLinearGradient(colX, height, colX, height * 0.25);
+          colGrad.addColorStop(0, "rgba(15, 10, 8, 0.9)");
+          colGrad.addColorStop(0.4, "rgba(69, 26, 3, 0.7)");
+          colGrad.addColorStop(0.75, "rgba(180, 83, 9, 0.45)");
+          colGrad.addColorStop(1, "transparent");
+
+          ctx.fillStyle = colGrad;
+          ctx.beginPath();
+          ctx.moveTo(colX - colW / 2, height);
+          ctx.bezierCurveTo(
+            colX - colW * 0.6, height * 0.6,
+            colX - colW * 0.3, height * 0.4,
+            colX, height * 0.22 + Math.sin(tick * 0.02 + i) * 10
+          );
+          ctx.bezierCurveTo(
+            colX + colW * 0.3, height * 0.4,
+            colX + colW * 0.6, height * 0.6,
+            colX + colW / 2, height
+          );
+          ctx.fill();
+        });
+
+        // Protostars bursting through dust crests
+        pillarStars.forEach((star) => {
+          star.pulse += 0.03;
+          const a = 0.7 + Math.sin(star.pulse) * 0.3;
+          drawDiffractionStar(star.x, star.y, star.size, star.color, star.spikeLen * a, a, 6);
+        });
+      }
+
+      // ========================================================
+      // 4. BUTTERFLY NEBULA (Ref Image 4: NGC 6302 - "Twin Jet Wings")
+      // ========================================================
+      else if (currentMode === "butterfly") {
+        // Supersonic Bilateral Wings (Turquoise, Cyan & Lavender)
+        const wingGrad = ctx.createRadialGradient(cx, cy, 10, cx, cy, width * 0.55);
+        wingGrad.addColorStop(0, "rgba(255, 255, 255, 0.5)");
+        wingGrad.addColorStop(0.2, "rgba(6, 182, 212, 0.35)");
+        wingGrad.addColorStop(0.5, "rgba(192, 132, 252, 0.25)");
+        wingGrad.addColorStop(0.8, "rgba(244, 114, 182, 0.12)");
+        wingGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = wingGrad;
+        ctx.fillRect(0, 0, width, height);
+
+        // Bilateral streaming wing particles
+        butterflyParticles.forEach((p) => {
+          p.dist += p.speed;
+          if (p.dist > width * 0.55) p.dist = 15;
+          const osc = Math.sin(tick * 0.025 + p.dist * 0.02) * 25;
+          const px = cx + Math.cos(p.spreadAngle) * p.dist;
+          const py = cy + Math.sin(p.spreadAngle) * p.dist * 0.65 + osc;
+
+          ctx.beginPath();
+          ctx.arc(px, py, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+        });
+        ctx.shadowBlur = 0;
+
+        // Dark Equatorial Dust Waist
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 45, 110, 0, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(4, 6, 12, 0.75)";
+        ctx.fill();
+        ctx.restore();
+
+        // Central Dying Star with brilliant diffraction cross
+        drawDiffractionStar(cx, cy, 4, "#ffffff", 48, 1, 6);
+      }
+
+      // ========================================================
+      // 5. SPIRAL GALAXY (Andromeda Cosmic Nucleus)
+      // ========================================================
+      else if (currentMode === "galaxy") {
+        // Galactic Core Warm Glow
+        const coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 95);
+        coreGrad.addColorStop(0, "#ffffff");
+        coreGrad.addColorStop(0.3, "#fef08a");
+        coreGrad.addColorStop(0.65, "rgba(56, 189, 248, 0.4)");
+        coreGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = coreGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, 95, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Rotating Spiral Arms
+        galaxyStars.forEach((star) => {
+          star.angle += star.speed;
+          const rx = Math.cos(star.angle) * star.dist;
+          const ry = Math.sin(star.angle) * star.dist * 0.45; // 3D tilt
+          const px = cx + rx;
+          const py = cy + ry;
+
+          ctx.beginPath();
+          ctx.arc(px, py, star.size, 0, Math.PI * 2);
+          ctx.fillStyle = star.color;
+          ctx.shadowColor = star.color;
+          ctx.shadowBlur = 6;
+          ctx.fill();
+        });
+        ctx.shadowBlur = 0;
+      }
+
+      // ========================================================
+      // 6. STELLAR NURSERY (Orion Multi-Spectral Nebula)
+      // ========================================================
+      else if (currentMode === "nursery") {
+        nurseryNodes.forEach((node) => {
           node.x += node.vx;
           node.y += node.vy;
           if (node.x < 0 || node.x > width) node.vx *= -1;
           if (node.y < 0 || node.y > height) node.vy *= -1;
 
-          // Mouse attraction
-          const dx = mouse.x - node.x;
-          const dy = mouse.y - node.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < 140) {
-            node.x += (dx / dist) * 1.5;
-            node.y += (dy / dist) * 1.5;
-          }
-        });
-
-        // Draw connections
-        for (let i = 0; i < nodes.length; i++) {
-          for (let j = i + 1; j < nodes.length; j++) {
-            const d = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
-            if (d < 130) {
-              const alpha = (1 - d / 130) * 0.45;
-              ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
-              ctx.lineWidth = 1;
-              ctx.beginPath();
-              ctx.moveTo(nodes[i].x, nodes[i].y);
-              ctx.lineTo(nodes[j].x, nodes[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-
-        // Draw nodes
-        nodes.forEach((node) => {
+          const g = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r);
+          g.addColorStop(0, node.color);
+          g.addColorStop(0.7, "rgba(4, 6, 14, 0.05)");
+          g.addColorStop(1, "transparent");
+          ctx.fillStyle = g;
+          ctx.globalAlpha = 0.22;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-          ctx.fillStyle = node.color + "0.85)";
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = "#38bdf8";
+          ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
           ctx.fill();
-          ctx.shadowBlur = 0;
-        });
-      } else if (currentMode === "gyroscope") {
-        // Mode 3: Quantum Gyroscope Rings
-        gyroAngle += 0.015;
-        const cx = width / 2 + (mouse.x - width / 2) * 0.15;
-        const cy = height / 2 + (mouse.y - height / 2) * 0.15;
-        const ringRadii = [180, 140, 100, 60];
-
-        ringRadii.forEach((r, idx) => {
-          const speedFactor = (idx + 1) * 0.8;
-          ctx.save();
-          ctx.translate(cx, cy);
-          ctx.rotate(gyroAngle * (idx % 2 === 0 ? 1 : -1) * 0.5);
-
-          ctx.beginPath();
-          ctx.ellipse(0, 0, r, r * Math.abs(Math.cos(gyroAngle * speedFactor)), gyroAngle * 0.7, 0, Math.PI * 2);
-          ctx.strokeStyle = idx % 2 === 0 ? "rgba(56, 189, 248, 0.45)" : "rgba(168, 85, 247, 0.45)";
-          ctx.lineWidth = 1.5;
-          ctx.shadowBlur = 12;
-          ctx.shadowColor = idx % 2 === 0 ? "#38bdf8" : "#c084fc";
-          ctx.stroke();
-          ctx.restore();
+          ctx.globalAlpha = 1;
         });
 
-        // Glowing Core
-        ctx.beginPath();
-        ctx.arc(cx, cy, 14, 0, Math.PI * 2);
-        ctx.fillStyle = "#38bdf8";
-        ctx.shadowBlur = 24;
-        ctx.shadowColor = "#38bdf8";
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      } else if (currentMode === "grid") {
-        // Mode 4: Cybernetic Wireframe Grid
-        gridOffset = (gridOffset + 1.2) % 40;
-        const horizon = height * 0.55;
-        const gridW = width * 1.5;
-        const perspective = 300;
+        // Trapezium Cluster in center
+        [[-20, -10], [15, -18], [0, 22], [28, 12]].forEach(([ox, oy], idx) => {
+          drawDiffractionStar(cx + ox, cy + oy, 3.5, "#93c5fd", 30 + idx * 4, 0.9, 4);
+        });
+      }
 
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.25)";
-        ctx.lineWidth = 1;
-
-        // Vertical converging lines
-        const linesCount = 24;
-        for (let i = -linesCount / 2; i <= linesCount / 2; i++) {
-          const xBottom = width / 2 + i * (gridW / linesCount);
+      // ========================================================
+      // 7. SUPERNOVA REMNANT (Veil & Crab Filament Web)
+      // ========================================================
+      else if (currentMode === "supernova") {
+        supernovaFilaments.forEach((f, i) => {
           ctx.beginPath();
-          ctx.moveTo(width / 2 + (mouse.x - width / 2) * 0.2, horizon);
-          ctx.lineTo(xBottom, height);
-          ctx.stroke();
-        }
-
-        // Horizontal moving lines
-        for (let z = 0; z < 500; z += 40) {
-          const adjustedZ = (z + gridOffset) % 500;
-          const k = perspective / (perspective + adjustedZ);
-          const y = horizon + (height - horizon) * (1 - k);
-          const alpha = (1 - adjustedZ / 500) * 0.4;
-          ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(width, y);
-          ctx.stroke();
-        }
-      } else if (currentMode === "crystals") {
-        // Mode 5: 3D Floating Crystals (Polyhedra)
-        crystals.forEach((c) => {
-          c.rotX += c.vRotX;
-          c.rotY += c.vRotY;
-
-          // Wireframe Octahedron vertices
-          const s = c.size;
-          const verts = [
-            { x: 0, y: -s, z: 0 },
-            { x: s, y: 0, z: 0 },
-            { x: 0, y: 0, z: s },
-            { x: -s, y: 0, z: 0 },
-            { x: 0, y: 0, z: -s },
-            { x: 0, y: s, z: 0 }
-          ];
-
-          // 3D rotation
-          const proj = verts.map((v) => {
-            let y1 = v.y * Math.cos(c.rotX) - v.z * Math.sin(c.rotX);
-            let z1 = v.y * Math.sin(c.rotX) + v.z * Math.cos(c.rotX);
-            let x2 = v.x * Math.cos(c.rotY) + z1 * Math.sin(c.rotY);
-            let z2 = -v.x * Math.sin(c.rotY) + z1 * Math.cos(c.rotY);
-            return { x: c.x + x2, y: c.y + y1 };
-          });
-
-          const edges = [
-            [0, 1], [0, 2], [0, 3], [0, 4],
-            [5, 1], [5, 2], [5, 3], [5, 4],
-            [1, 2], [2, 3], [3, 4], [4, 1]
-          ];
-
-          ctx.strokeStyle = c.color;
-          ctx.lineWidth = 1.2;
+          ctx.moveTo(cx, cy);
+          const steps = 14;
+          for (let s = 1; s <= steps; s++) {
+            const progress = s / steps;
+            const currentDist = f.len * progress + Math.sin(tick * 0.03 + i) * 15;
+            const currentAng = f.ang + Math.sin(s * 0.5 + tick * 0.02) * f.waviness;
+            const fx = cx + Math.cos(currentAng) * currentDist;
+            const fy = cy + Math.sin(currentAng) * currentDist * 0.75;
+            ctx.lineTo(fx, fy);
+          }
+          ctx.strokeStyle = f.color;
+          ctx.lineWidth = 1.4;
           ctx.globalAlpha = 0.45;
-          ctx.beginPath();
-          edges.forEach(([p1, p2]) => {
-            ctx.moveTo(proj[p1].x, proj[p1].y);
-            ctx.lineTo(proj[p2].x, proj[p2].y);
-          });
           ctx.stroke();
           ctx.globalAlpha = 1;
         });
-      } else if (currentMode === "wave") {
-        // Mode 6: Fluid 3D Particle Wave Ribbon
-        waveStep += 0.025;
-        const points = 70;
-        const spacing = width / points;
 
-        for (let row = 0; row < 3; row++) {
+        // Central Pulsar with periodic relativistic flash
+        const flash = (Math.sin(tick * 0.08) + 1) / 2;
+        drawDiffractionStar(cx, cy, 3 + flash * 2, "#38bdf8", 35 + flash * 20, 0.8 + flash * 0.2, 6);
+      }
+
+      // ========================================================
+      // 8. EVENT HORIZON BLACK HOLE (Gargantua Singularity)
+      // ========================================================
+      else if (currentMode === "blackhole") {
+        // Gravitational Lensing Einstein Ring (Starlight halo)
+        const lensGrad = ctx.createRadialGradient(cx, cy, 65, cx, cy, 140);
+        lensGrad.addColorStop(0, "transparent");
+        lensGrad.addColorStop(0.4, "rgba(254, 240, 138, 0.45)");
+        lensGrad.addColorStop(0.7, "rgba(56, 189, 248, 0.35)");
+        lensGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = lensGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, 140, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Relativistic Accretion Disk Particles
+        accretionParticles.forEach((p) => {
+          p.angle += p.speed;
+          const rx = Math.cos(p.angle) * p.dist;
+          const ry = Math.sin(p.angle) * (p.dist * 0.32); // Flattened orbital plane
+          const px = cx + rx;
+          const py = cy + ry;
+
           ctx.beginPath();
-          ctx.strokeStyle = row === 0 ? "rgba(56, 189, 248, 0.4)" : (row === 1 ? "rgba(168, 85, 247, 0.35)" : "rgba(52, 211, 153, 0.3)");
-          ctx.lineWidth = 2;
-
-          for (let i = 0; i <= points; i++) {
-            const x = i * spacing;
-            const y = height * 0.5 + Math.sin(i * 0.15 + waveStep + row * 1.2) * 60 + Math.cos(i * 0.08 - waveStep) * 40 + (mouse.y - height / 2) * 0.15;
-            if (i === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        }
-      } else if (currentMode === "matrix") {
-        // Mode 7: Cyber Matrix Stream
-        ctx.fillStyle = "rgba(56, 189, 248, 0.65)";
-        ctx.font = "12px monospace";
-        matrixCols.forEach((col) => {
-          col.y += col.speed;
-          if (col.y > height) col.y = -50;
-          const char = col.chars[Math.floor(Math.random() * col.chars.length)];
-          ctx.fillText(char, col.x, col.y);
+          ctx.arc(px, py, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur = 8;
+          ctx.fill();
         });
-      } else if (currentMode === "aurora") {
-        // Mode 8: Apple Aurora Liquid
-        auroraTick += 0.015;
-        const grad = ctx.createRadialGradient(
-          mouse.x,
-          mouse.y,
-          50,
-          width / 2 + Math.sin(auroraTick) * 200,
-          height / 2 + Math.cos(auroraTick) * 150,
-          width * 0.6
-        );
-        grad.addColorStop(0, "rgba(56, 189, 248, 0.18)");
-        grad.addColorStop(0.5, "rgba(168, 85, 247, 0.12)");
-        grad.addColorStop(1, "transparent");
+        ctx.shadowBlur = 0;
 
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, width, height);
+        // Velvet Black Event Horizon (The Singularity)
+        ctx.beginPath();
+        ctx.arc(cx, cy, 68, 0, Math.PI * 2);
+        ctx.fillStyle = "#000000";
+        ctx.shadowColor = "rgba(0, 0, 0, 0.95)";
+        ctx.shadowBlur = 30;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Thin photon sphere ring
+        ctx.beginPath();
+        ctx.arc(cx, cy, 70, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.65)";
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
       }
 
       requestAnimationFrame(renderLoop);
@@ -733,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.classList.add("active");
         currentMode = btn.getAttribute("data-mode");
         initCurrentMode();
-        showToast(`Active 3D Theme: ${btn.textContent}`);
+        showToast(`Active Space Theme: ${btn.textContent}`);
       });
     });
 

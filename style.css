@@ -92,9 +92,9 @@ body {
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.35;
-  animation: floatOrb 22s infinite alternate ease-in-out;
+  filter: blur(140px);
+  opacity: 0.12; /* Subtle depth glow that harmonizes with NASA 3D space canvas */
+  animation: floatOrb 24s infinite alternate ease-in-out;
 }
 
 .orb-1 {
@@ -2287,7 +2287,7 @@ section {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 /* Floating Switcher Dock at Bottom */

@@ -21,18 +21,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   
   <!-- Custom Apple Glass Stylesheet -->
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style.css?v=nasa_v3" />
 </head>
 <body>
 
-  <!-- Ambient Dynamic Lighting Mesh & 3D WebGL Canvas Layer -->
-  <div class="ambient-canvas" aria-hidden="true">
-    <canvas id="bg3dCanvas" class="bg-3d-canvas"></canvas>
-    <div class="ambient-orb orb-1"></div>
-    <div class="ambient-orb orb-2"></div>
-    <div class="ambient-orb orb-3"></div>
-    <div class="ambient-orb orb-4"></div>
-  </div>
+  <!-- Fixed 3D Deep Space NASA Canvas Layer (Completely Stable & Fixed) -->
+  <canvas id="bg3dCanvas" class="bg-3d-canvas" aria-hidden="true"></canvas>
 
   <!-- Apple Floating Dynamic Island Navigation -->
   <header class="nav-wrapper">
@@ -1022,7 +1016,7 @@
   <!-- Toast Notification Bubble -->
   <div id="toastNotice" class="toast-notice" role="status" aria-live="polite"></div>
 
-  <!-- Custom Interaction Script -->
-  <script src="./script.js"></script>
+  <!-- Custom Interaction Script (Cache-Busted for Immediate Update) -->
+  <script src="./script.js?v=nasa_v3"></script>
 </body>
 </html>

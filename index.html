@@ -21,12 +21,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   
   <!-- Custom Apple Glass Stylesheet -->
-  <link rel="stylesheet" href="./style.css?v=nasa_v3" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
-  <!-- Fixed 3D Deep Space NASA Canvas Layer (Completely Stable & Fixed) -->
-  <canvas id="bg3dCanvas" class="bg-3d-canvas" aria-hidden="true"></canvas>
+  <!-- Ambient Dynamic Lighting Mesh -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-orb orb-4"></div>
+  </div>
 
   <!-- Apple Floating Dynamic Island Navigation -->
   <header class="nav-wrapper">
@@ -48,10 +53,6 @@
       </ul>
 
       <div class="nav-actions">
-        <button class="cmd-palette-trigger" id="cmdPaletteTrigger" title="Quick Search (Ctrl + K / ⌘K)" aria-label="Open Command Palette">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span class="cmd-badge">⌘K</span>
-        </button>
         <a href="#contact" class="btn-hire">Hire Me</a>
         <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -153,49 +154,6 @@
             <div class="glass-panel glass-spotlight stat-card">
               <div class="stat-number">200+</div>
               <div class="stat-label">Corporate Pipeline Automations</div>
-            </div>
-          </div>
-
-          <!-- Interactive Developer Terminal (Hacker Glass Box) -->
-          <div class="hero-terminal-wrap">
-            <div class="glass-panel dev-terminal-box">
-              <div class="terminal-header">
-                <div class="terminal-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
-                </div>
-                <div class="terminal-title">tushpendra@macos:~ (zsh) &bull; status: active</div>
-                <div class="terminal-actions">
-                  <button class="terminal-btn-copy" id="copyTermJsonBtn" title="Copy developer JSON to clipboard">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                    <span>Copy JSON</span>
-                  </button>
-                </div>
-              </div>
-              <div class="terminal-body">
-                <div class="term-line">
-                  <span class="term-prompt">$</span> <span class="term-cmd">tushpendra --status --json</span>
-                </div>
-                <div class="term-output">
-                  <pre class="term-code"><code id="termCode">{
-  <span class="json-key">"engineer"</span>: <span class="json-str">"Tushpendra Kumar"</span>,
-  <span class="json-key">"role"</span>: <span class="json-str">"Software Engineer &bull; Full-Stack &bull; AI Systems"</span>,
-  <span class="json-key">"status"</span>: <span class="json-str">"Available for Immediate Full-Time Joining (Class of 2026)"</span>,
-  <span class="json-key">"internship"</span>: <span class="json-str">"Fostering Linux Services (6 Mos System Administration)"</span>,
-  <span class="json-key">"core_stack"</span>: [<span class="json-str">"React.js"</span>, <span class="json-str">"Node.js"</span>, <span class="json-str">"Express"</span>, <span class="json-str">"MongoDB"</span>, <span class="json-str">"MySQL"</span>, <span class="json-str">"Gemini AI"</span>],
-  <span class="json-key">"algorithms"</span>: <span class="json-str">"DSA Practitioner &bull; LeetCode Active"</span>,
-  <span class="json-key">"open_for_roles"</span>: [<span class="json-str">"SDE-1"</span>, <span class="json-str">"Full-Stack Engineer"</span>, <span class="json-str">"Frontend / Backend"</span>],
-  <span class="json-key">"contact"</span>: {
-    <span class="json-key">"email"</span>: <span class="json-str">"tushpendrakumar@gmail.com"</span>,
-    <span class="json-key">"phone"</span>: <span class="json-str">"+91-7055072196"</span>
-  }
-}</code></pre>
-                </div>
-                <div class="term-prompt-line">
-                  <span class="term-prompt">$</span> <span class="term-typed-hint">ready for deployment...</span><span class="term-cursor"></span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -459,16 +417,6 @@
               </div>
               <h3 class="project-title">JobAI – AI Career Copilot</h3>
               <div class="project-tagline">15-Screen SaaS Career & Resume Optimization Platform</div>
-              <div class="project-arch-flow">
-                <span class="arch-flow-label">Pipeline:</span>
-                <span class="arch-node">React SPA</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Gemini 1.5 LLM</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">ATS Scorer</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">PDF Engine</span>
-              </div>
               <p class="project-description">
                 An intelligent career platform engineered for job seekers, integrating real-time LLM prompt chains with dynamic scoring algorithms.
               </p>
@@ -516,16 +464,6 @@
               </div>
               <h3 class="project-title">OpsPulse – Cloud Observability</h3>
               <div class="project-tagline">DevOps Fleet Management & Incident Monitoring Dashboard</div>
-              <div class="project-arch-flow">
-                <span class="arch-flow-label">Pipeline:</span>
-                <span class="arch-node">Cluster Telemetry</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">REST Collector</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">22-Entity Schema</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">RBAC Engine</span>
-              </div>
               <p class="project-description">
                 A modern infrastructure monitoring dashboard replicating enterprise observability systems like Datadog and Grafana.
               </p>
@@ -573,16 +511,6 @@
               </div>
               <h3 class="project-title">CodeByTushu – EdTech & AI Agent</h3>
               <div class="project-tagline">Full-Stack Digital Platform with Real-Time LLM Microservice</div>
-              <div class="project-arch-flow">
-                <span class="arch-flow-label">Pipeline:</span>
-                <span class="arch-node">Client SPA</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Socket.IO Gateway</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Gemini AI Stream</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">MySQL Store</span>
-              </div>
               <p class="project-description">
                 A live production edtech platform featuring DSA guides, video courses, digital merchandise store, and an embedded streaming AI mentor.
               </p>
@@ -630,16 +558,6 @@
               </div>
               <h3 class="project-title">LeetCode AI Studio Pipeline</h3>
               <div class="project-tagline">Autonomous Multi-Stage Algorithmic Content & Video Generation</div>
-              <div class="project-arch-flow">
-                <span class="arch-flow-label">Pipeline:</span>
-                <span class="arch-node">LeetCode API</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Python AST</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">TTS Engine</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">FFmpeg Render</span>
-              </div>
               <p class="project-description">
                 An automated Python pipeline that parses daily LeetCode algorithmic challenges, validates solutions, generates AI voiceover narration, and orchestrates rendering.
               </p>
@@ -897,126 +815,10 @@
     </div>
   </footer>
 
-  <!-- Spotlight Command Palette (Ctrl + K / ⌘K) -->
-  <div id="cmdPalette" class="cmd-palette-backdrop" role="dialog" aria-modal="true" aria-label="Command Palette">
-    <div class="cmd-palette-modal glass-panel">
-      <div class="cmd-input-row">
-        <svg class="cmd-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="cmdInput" class="cmd-input" placeholder="Type a command or search (e.g. 'resume', 'jobai', 'email')..." autocomplete="off" />
-        <button class="cmd-esc-badge" id="cmdCloseBtn" aria-label="Close command palette">ESC</button>
-      </div>
-      <div class="cmd-results" id="cmdResults">
-        <div class="cmd-group-label">Quick Navigation</div>
-        <a href="#projects" class="cmd-item" data-title="projects work explore platforms">
-          <span class="cmd-item-icon">💼</span>
-          <span class="cmd-item-text">Explore Featured Projects</span>
-          <span class="cmd-item-hint">Jump</span>
-        </a>
-        <a href="#about" class="cmd-item" data-title="about career vision aim bio">
-          <span class="cmd-item-icon">🎯</span>
-          <span class="cmd-item-text">About Me & Career Vision</span>
-          <span class="cmd-item-hint">Jump</span>
-        </a>
-        <a href="#experience" class="cmd-item" data-title="experience internship fostering linux services devops">
-          <span class="cmd-item-icon">🏢</span>
-          <span class="cmd-item-text">Work Experience (Fostering Linux Services)</span>
-          <span class="cmd-item-hint">Jump</span>
-        </a>
-        <a href="#skills" class="cmd-item" data-title="skills tech stack react node express python sql gemini">
-          <span class="cmd-item-icon">⚡</span>
-          <span class="cmd-item-text">Skills & Tech Stack Matrix</span>
-          <span class="cmd-item-hint">Jump</span>
-        </a>
-        <a href="#contact" class="cmd-item" data-title="contact hire touch email phone reach">
-          <span class="cmd-item-icon">✉️</span>
-          <span class="cmd-item-text">Contact & Hire Me</span>
-          <span class="cmd-item-hint">Jump</span>
-        </a>
-
-        <div class="cmd-group-label">Actions & Downloads</div>
-        <a href="./assets/Tushpendra_Kumar_Resume.pdf" target="_blank" download="Tushpendra_Kumar_Resume.pdf" class="cmd-item" data-title="resume cv download pdf file">
-          <span class="cmd-item-icon">📄</span>
-          <span class="cmd-item-text">Download Official Resume (PDF)</span>
-          <span class="cmd-item-hint">Download</span>
-        </a>
-        <button class="cmd-item" data-action="copy-email" data-title="copy email tushpendrakumar@gmail.com message">
-          <span class="cmd-item-icon">📋</span>
-          <span class="cmd-item-text">Copy Email (tushpendrakumar@gmail.com)</span>
-          <span class="cmd-item-hint">Copy</span>
-        </button>
-        <button class="cmd-item" data-action="copy-phone" data-title="copy phone call mobile 7055072196">
-          <span class="cmd-item-icon">📞</span>
-          <span class="cmd-item-text">Copy Phone (+91-7055072196)</span>
-          <span class="cmd-item-hint">Copy</span>
-        </button>
-
-        <div class="cmd-group-label">Live Platform Demos</div>
-        <a href="https://jobai-codebutushu.netlify.app/" target="_blank" rel="noopener noreferrer" class="cmd-item" data-title="jobai ats resume analyzer ai career copilot">
-          <span class="cmd-item-icon">🤖</span>
-          <span class="cmd-item-text">JobAI – Smart ATS Resume Analyzer</span>
-          <span class="cmd-item-hint">Live Demo</span>
-        </a>
-        <a href="https://opspulse-observability-platform.netlify.app/" target="_blank" rel="noopener noreferrer" class="cmd-item" data-title="opspulse cloud observability devops telemetry">
-          <span class="cmd-item-icon">📊</span>
-          <span class="cmd-item-text">OpsPulse – Cloud Observability Dashboard</span>
-          <span class="cmd-item-hint">Live Demo</span>
-        </a>
-        <a href="https://codebytushu.com" target="_blank" rel="noopener noreferrer" class="cmd-item" data-title="codebytushu platform edtech live ai agent">
-          <span class="cmd-item-icon">🚀</span>
-          <span class="cmd-item-text">CodeByTushu – EdTech & AI Agent Platform</span>
-          <span class="cmd-item-hint">Live Demo</span>
-        </a>
-
-        <div class="cmd-group-label">Developer Profiles</div>
-        <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="cmd-item" data-title="github repositories code source git">
-          <span class="cmd-item-icon">🐙</span>
-          <span class="cmd-item-text">GitHub Profile (@Tushpendra-Kumar)</span>
-          <span class="cmd-item-hint">Open</span>
-        </a>
-        <a href="https://leetcode.com/u/TushpendraKumar/" target="_blank" rel="noopener noreferrer" class="cmd-item" data-title="leetcode algorithms dsa competitive programming">
-          <span class="cmd-item-icon">🧠</span>
-          <span class="cmd-item-text">LeetCode Solutions (@TushpendraKumar)</span>
-          <span class="cmd-item-hint">Open</span>
-        </a>
-        <a href="https://www.linkedin.com/in/tushpendra-kumar-08a56925b/" target="_blank" rel="noopener noreferrer" class="cmd-item" data-title="linkedin network connections experience">
-          <span class="cmd-item-icon">💼</span>
-          <span class="cmd-item-text">LinkedIn Profile</span>
-          <span class="cmd-item-hint">Open</span>
-        </a>
-      </div>
-      <div class="cmd-footer-bar">
-        <span>Navigate <kbd class="cmd-kbd">&uarr;</kbd> <kbd class="cmd-kbd">&darr;</kbd></span>
-        <span>Select <kbd class="cmd-kbd">&crarr;</kbd></span>
-        <span>Close <kbd class="cmd-kbd">ESC</kbd></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating 3D Style Switcher Dock (8 NASA Space Universe Themes) -->
-  <aside class="theme-switcher-dock glass-panel" id="themeSwitcherDock" aria-label="3D Space Universe Switcher">
-    <div class="switcher-top-row">
-      <div class="switcher-badge-group">
-        <span class="switcher-status-dot"></span>
-        <span class="switcher-title">🌌 8 NASA Space Themes (Click to test):</span>
-      </div>
-      <button class="switcher-minimize-btn" id="switcherToggleBtn" title="Minimize / Expand switcher">&minus;</button>
-    </div>
-    <div class="switcher-buttons" id="switcherButtons">
-      <button class="switcher-btn active" data-mode="hourglass">1. 🪐 Hourglass Nebula (Ref 1)</button>
-      <button class="switcher-btn" data-mode="horsehead">2. 🌌 Crimson Void (Ref 2)</button>
-      <button class="switcher-btn" data-mode="pillars">3. 🏔️ Mystic Pillars (Ref 3)</button>
-      <button class="switcher-btn" data-mode="butterfly">4. 🦋 Butterfly Wings (Ref 4)</button>
-      <button class="switcher-btn" data-mode="galaxy">5. 🌀 Spiral Galaxy</button>
-      <button class="switcher-btn" data-mode="nursery">6. 💎 Stellar Nursery</button>
-      <button class="switcher-btn" data-mode="supernova">7. ⚡ Supernova Remnant</button>
-      <button class="switcher-btn" data-mode="blackhole">8. 🕳️ Event Horizon</button>
-    </div>
-  </aside>
-
   <!-- Toast Notification Bubble -->
   <div id="toastNotice" class="toast-notice" role="status" aria-live="polite"></div>
 
-  <!-- Custom Interaction Script (Cache-Busted for Immediate Update) -->
-  <script src="./script.js?v=nasa_v3"></script>
+  <!-- Custom Interaction Script -->
+  <script src="./script.js"></script>
 </body>
 </html>

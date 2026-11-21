@@ -173,4 +173,203 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // 8. Terminal Copy JSON Action
+  const copyTermBtn = document.getElementById("copyTermJsonBtn");
+  const termCodeElement = document.getElementById("termCode");
+
+  if (copyTermBtn && termCodeElement) {
+    copyTermBtn.addEventListener("click", () => {
+      const cleanJson = termCodeElement.innerText;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(cleanJson).then(() => {
+          showToast("Developer profile JSON copied!");
+        });
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = cleanJson;
+        ta.style.position = "fixed";
+        ta.style.left = "-999999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        showToast("Developer profile JSON copied!");
+      }
+    });
+  }
+
+  // 9. Spotlight Command Palette (Ctrl + K / ⌘K)
+  const cmdPalette = document.getElementById("cmdPalette");
+  const cmdPaletteTrigger = document.getElementById("cmdPaletteTrigger");
+  const cmdInput = document.getElementById("cmdInput");
+  const cmdCloseBtn = document.getElementById("cmdCloseBtn");
+  const cmdItems = document.querySelectorAll(".cmd-item");
+  const cmdGroupLabels = document.querySelectorAll(".cmd-group-label");
+
+  function openCommandPalette() {
+    if (!cmdPalette) return;
+    cmdPalette.classList.add("open");
+    if (cmdInput) {
+      cmdInput.value = "";
+      cmdInput.focus();
+    }
+    filterCommandItems("");
+    setFocusedIndex(0);
+  }
+
+  function closeCommandPalette() {
+    if (!cmdPalette) return;
+    cmdPalette.classList.remove("open");
+    if (cmdInput) cmdInput.blur();
+  }
+
+  if (cmdPaletteTrigger) {
+    cmdPaletteTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      openCommandPalette();
+    });
+  }
+
+  if (cmdCloseBtn) {
+    cmdCloseBtn.addEventListener("click", closeCommandPalette);
+  }
+
+  if (cmdPalette) {
+    cmdPalette.addEventListener("click", (e) => {
+      if (e.target === cmdPalette) {
+        closeCommandPalette();
+      }
+    });
+  }
+
+  // Global Keyboard Shortcuts (Ctrl + K / Cmd + K and ESC)
+  window.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      if (cmdPalette && cmdPalette.classList.contains("open")) {
+        closeCommandPalette();
+      } else {
+        openCommandPalette();
+      }
+    } else if (e.key === "Escape") {
+      closeCommandPalette();
+    }
+  });
+
+  // Filter Command Palette Items Dynamically
+  function filterCommandItems(query) {
+    const q = query.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cmdItems.forEach((item) => {
+      const title = (item.getAttribute("data-title") || "").toLowerCase();
+      const text = item.textContent.toLowerCase();
+
+      if (!q || title.includes(q) || text.includes(q)) {
+        item.style.display = "flex";
+        visibleCount++;
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    // Hide empty group labels if user is actively searching
+    if (q.length > 0) {
+      cmdGroupLabels.forEach((label) => (label.style.display = "none"));
+    } else {
+      cmdGroupLabels.forEach((label) => (label.style.display = "block"));
+    }
+
+    resetFocusToFirstVisible();
+  }
+
+  if (cmdInput) {
+    cmdInput.addEventListener("input", (e) => {
+      filterCommandItems(e.target.value);
+    });
+
+    // Keyboard Navigation within Palette (Arrow Up / Down, Enter)
+    cmdInput.addEventListener("keydown", (e) => {
+      const visibleItems = Array.from(cmdItems).filter(
+        (item) => item.style.display !== "none"
+      );
+
+      if (visibleItems.length === 0) return;
+
+      const currentFocusedIndex = visibleItems.findIndex((item) =>
+        item.classList.contains("focused")
+      );
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const nextIndex =
+          currentFocusedIndex < visibleItems.length - 1
+            ? currentFocusedIndex + 1
+            : 0;
+        setFocusedIndexOnList(visibleItems, nextIndex);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const prevIndex =
+          currentFocusedIndex > 0
+            ? currentFocusedIndex - 1
+            : visibleItems.length - 1;
+        setFocusedIndexOnList(visibleItems, prevIndex);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        const activeItem =
+          visibleItems[currentFocusedIndex >= 0 ? currentFocusedIndex : 0];
+        if (activeItem) {
+          activeItem.click();
+        }
+      }
+    });
+  }
+
+  function setFocusedIndexOnList(list, index) {
+    list.forEach((item) => item.classList.remove("focused"));
+    if (list[index]) {
+      list[index].classList.add("focused");
+      list[index].scrollIntoView({ block: "nearest" });
+    }
+  }
+
+  function resetFocusToFirstVisible() {
+    const visibleItems = Array.from(cmdItems).filter(
+      (item) => item.style.display !== "none"
+    );
+    cmdItems.forEach((item) => item.classList.remove("focused"));
+    if (visibleItems.length > 0) {
+      visibleItems[0].classList.add("focused");
+    }
+  }
+
+  function setFocusedIndex(idx) {
+    resetFocusToFirstVisible();
+  }
+
+  // Handle Action Item Clicks (Copy Email, Copy Phone, Anchors)
+  cmdItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const action = item.getAttribute("data-action");
+      if (action === "copy-email") {
+        e.preventDefault();
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText("tushpendrakumar@gmail.com");
+        }
+        showToast("Email copied to clipboard: tushpendrakumar@gmail.com");
+        closeCommandPalette();
+      } else if (action === "copy-phone") {
+        e.preventDefault();
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText("+917055072196");
+        }
+        showToast("Phone copied to clipboard: +91-7055072196");
+        closeCommandPalette();
+      } else {
+        // Normal link, close palette after click
+        setTimeout(closeCommandPalette, 150);
+      }
+    });
+  });
 });

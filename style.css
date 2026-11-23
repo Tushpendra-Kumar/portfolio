@@ -771,18 +771,33 @@ section {
    ABOUT / CAREER AIM SECTION (Apple Glass Story Card)
    ========================================================================== */
 
+.title-gradient-cyan {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .about-bento {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: 24px;
   align-items: stretch;
 }
 
 .about-main-card {
-  padding: 40px;
+  padding: 38px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.about-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .about-badge {
@@ -796,88 +811,266 @@ section {
   color: var(--accent-cyan);
   font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 20px;
+}
+
+.about-academic-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
 }
 
 .about-quote {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: #ffffff;
-  line-height: 1.4;
+  line-height: 1.45;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .about-text {
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .about-text strong {
   color: #ffffff;
 }
 
-.career-aim-box {
-  margin-top: 24px;
-  padding: 20px;
+/* Key Milestones Bento Strip */
+.about-milestones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 22px 0 16px 0;
+}
+
+.milestone-box {
   background: rgba(255, 255, 255, 0.03);
-  border-left: 3px solid var(--accent-cyan);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  transition: all var(--transition-fast);
+}
+
+.milestone-box:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+.milestone-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.milestone-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Career Aim Highlight (Apple Glass Callout) */
+.career-aim-box {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: rgba(56, 189, 248, 0.04);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.career-aim-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #38bdf8, #818cf8);
+}
+
+.career-aim-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .career-aim-title {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 6px;
+  color: var(--accent-cyan);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+}
+
+.career-aim-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  color: #34d399;
+  font-weight: 600;
 }
 
 .career-aim-text {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+}
+
+.career-aim-text strong {
+  color: #ffffff;
 }
 
 /* Side Bento Cards */
 .about-side-cards {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .side-feature-card {
-  padding: 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  transition: all var(--transition-smooth);
+}
+
+.side-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.side-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 12px;
 }
 
 .feature-icon-bubble {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.feature-metric-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
 .side-feature-title {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
 }
 
 .side-feature-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+.side-feature-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.side-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.side-tag:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+}
+
+/* 4-Pill Developer Highlights Bar */
+.about-highlights-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.highlight-pill-card {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.highlight-pill-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.highlight-pill-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.highlight-pill-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-pill-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.highlight-pill-val {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.35;
 }
 
 /* ==========================================================================
@@ -1979,6 +2172,10 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .about-highlights-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .skills-bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2083,6 +2280,20 @@ section {
 
   .skills-bento-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-milestones {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .about-highlights-strip {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-main-card {
+    padding: 26px 20px;
   }
 
   .edu-grid {

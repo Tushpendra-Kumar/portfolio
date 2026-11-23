@@ -1074,101 +1074,460 @@ section {
 }
 
 /* ==========================================================================
-   WORK EXPERIENCE SECTION
+   WORK EXPERIENCE SECTION (Apple Bento Experience Matrix)
    ========================================================================== */
 
-.experience-card {
-  padding: 36px;
-  margin-bottom: 24px;
-  position: relative;
+/* 1. Flagship Card: Fostering Linux Services */
+.exp-flagship-card {
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 26px;
+  background: rgba(18, 22, 34, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth);
 }
 
-.exp-header {
+.exp-flagship-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.exp-flagship-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  gap: 20px;
+  padding-bottom: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.exp-role-group h3 {
-  font-size: 1.35rem;
+.exp-brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.exp-company-squircle {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(168, 85, 247, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.exp-squircle-icon {
+  font-size: 1.85rem;
+}
+
+.exp-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-company-sup {
+  font-size: 0.72rem;
   font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+}
+
+.exp-role-heading {
+  font-size: 1.45rem;
+  font-weight: 750;
   color: #ffffff;
   letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
-.exp-company {
-  font-size: 1.05rem;
-  color: var(--accent-cyan);
+.exp-company-sub {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.exp-company-name {
+  color: #e2e8f0;
   font-weight: 600;
-  margin-top: 4px;
 }
 
-.exp-meta {
-  text-align: right;
+.exp-sep {
+  color: rgba(255, 255, 255, 0.3);
 }
 
-.exp-duration {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 4px 14px;
-  border-radius: var(--radius-full);
-  display: inline-block;
-  margin-bottom: 6px;
-}
-
-.exp-location {
-  font-size: 0.85rem;
+.exp-location-tag {
   color: var(--text-muted);
 }
 
-.exp-bullets {
-  list-style: none;
+.exp-status-cluster {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 24px;
+  align-items: flex-end;
+  gap: 8px;
 }
 
-.exp-bullet-item {
+.exp-duration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+.exp-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.exp-summary-text {
+  margin: 22px 0;
+  font-size: 1.02rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.exp-summary-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 3 Frosted Impact Metrics Bar */
+.exp-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.exp-metric-item {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.exp-metric-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+.exp-metric-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.exp-metric-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.exp-metric-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* 4 Impact Modules 2x2 Grid */
+.exp-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.exp-impact-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 20px;
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  font-size: 0.95rem;
+  flex-direction: column;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.exp-impact-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.exp-impact-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.exp-impact-icon {
+  font-size: 1.35rem;
+}
+
+.exp-impact-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.exp-impact-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.exp-impact-desc {
+  font-size: 0.88rem;
   color: #cbd5e1;
   line-height: 1.6;
+  margin-bottom: 14px;
+  flex-grow: 1;
 }
 
-.bullet-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-cyan);
-  margin-top: 9px;
-  flex-shrink: 0;
-  box-shadow: 0 0 10px var(--accent-cyan);
+.exp-impact-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
 }
 
-.exp-tags {
+.exp-impact-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.exp-mini-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+/* Bottom Applied Toolchain */
+.exp-toolchain-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.exp-toolchain-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.exp-toolchain-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.exp-tag {
-  font-size: 0.78rem;
+.exp-chip {
+  font-size: 0.8rem;
   font-weight: 500;
   padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-full);
-  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  transition: all var(--transition-fast);
+}
+
+.exp-chip.featured {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.25);
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.exp-chip:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* 2. Dual Supporting Experience Bento Subgrid */
+.exp-subgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.exp-subcard {
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  background: rgba(18, 22, 34, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.exp-subcard:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-3px);
+}
+
+.exp-subcard-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.exp-subcard-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.exp-subcard-icon-wrap.cbt-gradient {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.2), rgba(249, 115, 22, 0.2));
+  border: 1px solid rgba(234, 179, 8, 0.35);
+}
+
+.exp-subcard-icon-wrap.hack-gradient {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2));
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.exp-subcard-titles {
+  flex-grow: 1;
+}
+
+.exp-subcard-role {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.exp-subcard-org {
+  font-size: 0.86rem;
+  color: var(--accent-cyan);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.exp-subcard-pill {
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+.exp-subcard-pill.gold {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+.exp-subcard-desc {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.exp-subcard-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.sub-hl-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.sub-hl-item strong {
+  color: #ffffff;
+}
+
+.sub-hl-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  margin-top: 7px;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.exp-subcard-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* ==========================================================================
@@ -2175,6 +2534,10 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .exp-subgrid {
+    grid-template-columns: 1fr;
+  }
+
   .skills-bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2277,6 +2640,40 @@ section {
     font-size: 1.7rem;
   }
 
+  /* Experience Responsive */
+  .exp-flagship-card {
+    padding: 28px 20px;
+  }
+
+  .exp-flagship-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .exp-status-cluster {
+    align-items: flex-start;
+  }
+
+  .exp-metrics-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .exp-impact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .exp-subcard {
+    padding: 24px 20px;
+  }
+
+  .exp-subcard-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   .skills-bento-grid {
     grid-template-columns: 1fr;
   }
@@ -2344,6 +2741,28 @@ section {
 }
 
 @media (max-width: 480px) {
+  .exp-company-squircle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .exp-squircle-icon {
+    font-size: 1.5rem;
+  }
+
+  .exp-role-heading {
+    font-size: 1.25rem;
+  }
+
+  .exp-metric-value {
+    font-size: 1.5rem;
+  }
+
+  .exp-toolchain-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .hero-actions {
     flex-direction: column;
     width: 100%;

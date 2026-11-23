@@ -1538,30 +1538,139 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin-bottom: 24px;
 }
 
 .skill-bento-card {
-  padding: 30px;
+  padding: 30px 26px;
+  border-radius: var(--radius-lg);
+  background: rgba(18, 22, 34, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
 }
 
-.skill-category-icon {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
+.skill-bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.skill-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.skill-squircle-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient themes per category */
+.skill-squircle-icon.icon-frontend {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(56, 189, 248, 0.22));
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
+.skill-squircle-icon.icon-backend {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(56, 189, 248, 0.22));
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.skill-squircle-icon.icon-ai {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.22), rgba(168, 85, 247, 0.22));
+  border-color: rgba(236, 72, 153, 0.35);
+}
+
+.skill-squircle-icon.icon-languages {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(59, 130, 246, 0.22));
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.skill-squircle-icon.icon-db {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(234, 88, 12, 0.22));
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.skill-squircle-icon.icon-devops {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.22), rgba(56, 189, 248, 0.22));
+  border-color: rgba(20, 184, 166, 0.35);
+}
+
+.skill-category-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+
+.skill-category-badge.cyan {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.25);
+  color: #7dd3fc;
+}
+
+.skill-category-badge.purple {
+  background: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.25);
+  color: #d8b4fe;
+}
+
+.skill-category-badge.emerald {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #6ee7b7;
+}
+
+.skill-category-badge.pink {
+  background: rgba(236, 72, 153, 0.08);
+  border-color: rgba(236, 72, 153, 0.25);
+  color: #f472b6;
+}
+
+.skill-category-badge.amber {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #fcd34d;
+}
+
+.skill-category-badge.teal {
+  background: rgba(20, 184, 166, 0.08);
+  border-color: rgba(20, 184, 166, 0.25);
+  color: #5eead4;
 }
 
 .skill-category-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 750;
   color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
 }
 
 .skill-category-subtitle {
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: #94a3b8;
+  line-height: 1.5;
   margin-bottom: 20px;
+  min-height: 38px;
 }
 
 .skill-chips-wrap {
@@ -1574,10 +1683,10 @@ section {
 .skill-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
   color: #e2e8f0;
@@ -1586,15 +1695,74 @@ section {
 }
 
 .skill-chip:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 .skill-chip.featured {
-  background: rgba(56, 189, 248, 0.12);
-  border-color: rgba(56, 189, 248, 0.35);
-  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.09);
+  border-color: rgba(56, 189, 248, 0.28);
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.skill-chip.featured:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.chip-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Skills Philosophy Strip (4 Columns at Bottom) */
+.skills-philosophy-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.skills-phil-item {
+  background: rgba(18, 22, 34, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skills-phil-item:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+.phil-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.phil-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.phil-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.phil-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 /* ==========================================================================
@@ -2542,6 +2710,10 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .skills-philosophy-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -2676,6 +2848,19 @@ section {
 
   .skills-bento-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skills-philosophy-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .skill-bento-card {
+    padding: 24px 20px;
+  }
+
+  .skill-category-subtitle {
+    min-height: auto;
   }
 
   .about-milestones {

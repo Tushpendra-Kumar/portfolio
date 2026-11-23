@@ -725,21 +725,23 @@
       </div>
     </section>
 
-    <!-- PROJECTS SHOWCASE SECTION -->
+    <!-- PROJECTS SHOWCASE SECTION (Apple Liquid Glass Matrix) -->
     <section id="projects">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Portfolio Highlights</span>
-          <h2 class="section-title">Featured Engineering Projects</h2>
-          <p class="section-desc">Production web platforms, intelligent AI copilots, and DevOps monitoring systems.</p>
+          <div class="section-tag-wrapper">
+            <span class="section-tag"><span class="tag-icon">🚀</span> Featured Engineering Projects</span>
+          </div>
+          <h2 class="section-title">Production Systems &amp; <span class="title-gradient-cyan">Intelligent Platforms</span></h2>
+          <p class="section-desc">Production-grade full-stack architectures, live AI co-pilots, and infrastructure telemetry platforms.</p>
         </div>
 
-        <!-- Filter Pills -->
+        <!-- Filter Pills Bar -->
         <div class="projects-filter-bar">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="ai">AI & GenAI</button>
-          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-          <button class="filter-btn" data-filter="devops">DevOps & Systems</button>
+          <button class="filter-btn active" data-filter="all">All Platforms <span class="filter-count">4</span></button>
+          <button class="filter-btn" data-filter="ai">✨ GenAI &amp; LLMs <span class="filter-count">3</span></button>
+          <button class="filter-btn" data-filter="fullstack">🌐 Full-Stack <span class="filter-count">3</span></button>
+          <button class="filter-btn" data-filter="devops">🛡️ Systems &amp; DevOps <span class="filter-count">2</span></button>
         </div>
 
         <!-- Projects Grid -->
@@ -748,44 +750,69 @@
           <article class="glass-panel glass-spotlight project-card" data-category="ai fullstack">
             <div>
               <div class="project-top-meta">
-                <span class="project-badge badge-ai">GenAI & SaaS</span>
+                <div class="project-brand-pill-group">
+                  <div class="project-app-squircle app-ai">
+                    <span>🤖</span>
+                  </div>
+                  <div class="project-meta-labels">
+                    <span class="project-badge badge-ai">GenAI &amp; SaaS</span>
+                    <span class="project-status-pill live">
+                      <span class="f-status-dot"></span>
+                      <span>Live App &bull; 15 Screens</span>
+                    </span>
+                  </div>
+                </div>
+
                 <div class="project-links-quick">
-                  <a href="https://github.com/Tushpendra-Kumar/JobAi-CodeByTushu" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                  <a href="https://github.com/Tushpendra-Kumar/JobAi-CodeByTushu" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="GitHub Repository" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
-                  <a href="https://jobai-codebutushu.netlify.app/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
+                  <a href="https://jobai-codebutushu.netlify.app/" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="Live Preview" aria-label="Live Demo">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                   </a>
                 </div>
               </div>
-              <h3 class="project-title">JobAI – AI Career Copilot</h3>
-              <div class="project-tagline">15-Screen SaaS Career & Resume Optimization Platform</div>
+
+              <h3 class="project-title">JobAI &ndash; AI Career Copilot</h3>
+              <div class="project-tagline">15-Screen SaaS Career &amp; Resume Optimization Platform</div>
+              
               <p class="project-description">
-                An intelligent career platform engineered for job seekers, integrating real-time LLM prompt chains with dynamic scoring algorithms.
+                An intelligent career platform engineered for job seekers, integrating real-time LLM prompt chains with dynamic scoring algorithms, ATS matching, and high-fidelity PDF exports.
               </p>
-              <ul class="project-highlights">
-                <li>Features ATS resume analyzer, AI cover letter generator, job matching engine, and live Kanban tracker.</li>
-                <li>Built a live resume builder with instantaneous A4 PDF export capabilities.</li>
-                <li>Structured client-side service layer handling dynamic JSON schemas and token streaming.</li>
-              </ul>
+
+              <div class="project-features-list">
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>ATS Match Engine:</strong> Algorithmic resume scanning against job postings with keyword gap analytics.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Dual LLM Orchestration:</strong> Streaming token responses using Google Gemini &amp; OpenAI GPT prompt chains.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Live Resume Builder:</strong> Instantaneous client-side A4 PDF generation with modular template switching.</span>
+                </div>
+              </div>
             </div>
+
             <div class="project-card-bottom">
               <div class="project-tech-stack">
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Google Gemini API</span>
-                <span class="tech-tag">OpenAI API</span>
-                <span class="tech-tag">Prompt Engineering</span>
-                <span class="tech-tag">Netlify SPA</span>
+                <span class="tech-tag"><span class="chip-icon">⚛️</span> React.js</span>
+                <span class="tech-tag"><span class="chip-icon">📘</span> TypeScript</span>
+                <span class="tech-tag"><span class="chip-icon">✨</span> Gemini API</span>
+                <span class="tech-tag"><span class="chip-icon">🧠</span> OpenAI GPT</span>
+                <span class="tech-tag"><span class="chip-icon">🌊</span> Tailwind CSS</span>
+                <span class="tech-tag"><span class="chip-icon">☁️</span> Netlify</span>
               </div>
               <div class="project-actions-row">
                 <a href="https://jobai-codebutushu.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                  <span>Live Demo</span>
+                  <span>Launch Live App</span>
                 </a>
                 <a href="https://github.com/Tushpendra-Kumar/JobAi-CodeByTushu" target="_blank" rel="noopener noreferrer" class="btn-project-code">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  <span>GitHub Code</span>
+                  <span>View Code</span>
                 </a>
               </div>
             </div>
@@ -795,44 +822,69 @@
           <article class="glass-panel glass-spotlight project-card" data-category="devops fullstack">
             <div>
               <div class="project-top-meta">
-                <span class="project-badge badge-devops">DevOps & Cloud</span>
+                <div class="project-brand-pill-group">
+                  <div class="project-app-squircle app-devops">
+                    <span>📊</span>
+                  </div>
+                  <div class="project-meta-labels">
+                    <span class="project-badge badge-devops">DevOps &amp; Cloud</span>
+                    <span class="project-status-pill live">
+                      <span class="f-status-dot"></span>
+                      <span>Telemetry &bull; RBAC</span>
+                    </span>
+                  </div>
+                </div>
+
                 <div class="project-links-quick">
-                  <a href="https://github.com/Tushpendra-Kumar/Opspulse-Observability-Platform" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                  <a href="https://github.com/Tushpendra-Kumar/Opspulse-Observability-Platform" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="GitHub Repository" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
-                  <a href="https://opspulse-observability-platform.netlify.app/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview" aria-label="Live Demo">
+                  <a href="https://opspulse-observability-platform.netlify.app/" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="Live Preview" aria-label="Live Demo">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                   </a>
                 </div>
               </div>
-              <h3 class="project-title">OpsPulse – Cloud Observability</h3>
-              <div class="project-tagline">DevOps Fleet Management & Incident Monitoring Dashboard</div>
+
+              <h3 class="project-title">OpsPulse &ndash; Cloud Observability</h3>
+              <div class="project-tagline">DevOps Fleet Management &amp; Incident Monitoring Dashboard</div>
+              
               <p class="project-description">
-                A modern infrastructure monitoring dashboard replicating enterprise observability systems like Datadog and Grafana.
+                A modern infrastructure monitoring dashboard replicating enterprise observability systems like Datadog and Grafana, featuring container telemetry and automated triage runbooks.
               </p>
-              <ul class="project-highlights">
-                <li>Simulated cluster node telemetry, container fleet health, and CI/CD build pipelines.</li>
-                <li>Designed a 22-entity relational database schema mapping multi-tenant cloud resources.</li>
-                <li>Integrated multi-role Role-Based Access Control (Admin, DevOps, Operator, Viewer).</li>
-              </ul>
+
+              <div class="project-features-list">
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Cluster Telemetry:</strong> Simulated real-time node CPU, memory metrics, and container lifecycle monitoring.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>22-Entity Schema:</strong> Relational database design modeling multi-tenant resources, incidents, and audit logs.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Enterprise RBAC:</strong> Granular multi-role security access (Admin, DevOps Engineer, Operator, Viewer).</span>
+                </div>
+              </div>
             </div>
+
             <div class="project-card-bottom">
               <div class="project-tech-stack">
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">Vite</span>
-                <span class="tech-tag">Tailwind CSS</span>
-                <span class="tech-tag">REST APIs</span>
-                <span class="tech-tag">Schema Design</span>
-                <span class="tech-tag">RBAC</span>
+                <span class="tech-tag"><span class="chip-icon">⚛️</span> React.js</span>
+                <span class="tech-tag"><span class="chip-icon">⚡</span> Vite</span>
+                <span class="tech-tag"><span class="chip-icon">🌊</span> Tailwind CSS</span>
+                <span class="tech-tag"><span class="chip-icon">🌐</span> REST APIs</span>
+                <span class="tech-tag"><span class="chip-icon">🔒</span> RBAC Matrix</span>
+                <span class="tech-tag"><span class="chip-icon">📊</span> Schema Design</span>
               </div>
               <div class="project-actions-row">
                 <a href="https://opspulse-observability-platform.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                  <span>Live Demo</span>
+                  <span>Launch Live App</span>
                 </a>
                 <a href="https://github.com/Tushpendra-Kumar/Opspulse-Observability-Platform" target="_blank" rel="noopener noreferrer" class="btn-project-code">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  <span>GitHub Code</span>
+                  <span>View Code</span>
                 </a>
               </div>
             </div>
@@ -842,44 +894,69 @@
           <article class="glass-panel glass-spotlight project-card" data-category="fullstack ai">
             <div>
               <div class="project-top-meta">
-                <span class="project-badge badge-fullstack">Production Platform</span>
+                <div class="project-brand-pill-group">
+                  <div class="project-app-squircle app-cbt">
+                    <span>🚀</span>
+                  </div>
+                  <div class="project-meta-labels">
+                    <span class="project-badge badge-fullstack">Production Platform</span>
+                    <span class="project-status-pill live">
+                      <span class="f-status-dot"></span>
+                      <span>35k+ Views &bull; E-Commerce</span>
+                    </span>
+                  </div>
+                </div>
+
                 <div class="project-links-quick">
-                  <a href="https://github.com/Tushpendra-Kumar/CodeByTushu-Portfolio-Showcase" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                  <a href="https://github.com/Tushpendra-Kumar/CodeByTushu-Portfolio-Showcase" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="GitHub Repository" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
-                  <a href="https://codebytushu.com/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Website" aria-label="Live Demo">
+                  <a href="https://codebytushu.com/" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="Live Platform" aria-label="Live Platform">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                   </a>
                 </div>
               </div>
-              <h3 class="project-title">CodeByTushu – EdTech & AI Agent</h3>
+
+              <h3 class="project-title">CodeByTushu &ndash; EdTech &amp; AI Agent</h3>
               <div class="project-tagline">Full-Stack Digital Platform with Real-Time LLM Microservice</div>
+              
               <p class="project-description">
-                A live production edtech platform featuring DSA guides, video courses, digital merchandise store, and an embedded streaming AI mentor.
+                A live production platform featuring DSA roadmaps, video course players, digital merchandise store with payment processing, and an embedded streaming AI mentor.
               </p>
-              <ul class="project-highlights">
-                <li>Developed real-time AI Agent microservice using Node.js, Socket.IO, and Google Gemini API.</li>
-                <li>Implemented token-streaming responses, prompt conditioning, and persistent database session logging.</li>
-                <li>Built automated order fulfillment workflows, transactional email systems, and role-based admin controls.</li>
-              </ul>
+
+              <div class="project-features-list">
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Real-Time AI Microservice:</strong> Node.js &amp; Socket.IO backend streaming Gemini API token responses.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>E-Commerce Workflows:</strong> Integrated Razorpay checkout, automated order fulfillment, and transactional emails.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>High-Traffic Performance:</strong> Production deployment serving 35,000+ organic developer impressions.</span>
+                </div>
+              </div>
             </div>
+
             <div class="project-card-bottom">
               <div class="project-tech-stack">
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Socket.IO</span>
-                <span class="tech-tag">Gemini API</span>
-                <span class="tech-tag">PHP 8+</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag"><span class="chip-icon">⚛️</span> React.js</span>
+                <span class="tech-tag"><span class="chip-icon">🟢</span> Node.js</span>
+                <span class="tech-tag"><span class="chip-icon">⚡</span> Express</span>
+                <span class="tech-tag"><span class="chip-icon">🍃</span> MongoDB</span>
+                <span class="tech-tag"><span class="chip-icon">🔌</span> Socket.IO</span>
+                <span class="tech-tag"><span class="chip-icon">💳</span> Razorpay</span>
               </div>
               <div class="project-actions-row">
                 <a href="https://codebytushu.com/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                  <span>Live Website</span>
+                  <span>Visit Platform</span>
                 </a>
                 <a href="https://github.com/Tushpendra-Kumar/CodeByTushu-Portfolio-Showcase" target="_blank" rel="noopener noreferrer" class="btn-project-code">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  <span>GitHub Code</span>
+                  <span>View Code</span>
                 </a>
               </div>
             </div>
@@ -889,43 +966,68 @@
           <article class="glass-panel glass-spotlight project-card" data-category="ai devops">
             <div>
               <div class="project-top-meta">
-                <span class="project-badge badge-ai">Pipeline & Media</span>
+                <div class="project-brand-pill-group">
+                  <div class="project-app-squircle app-studio">
+                    <span>🎬</span>
+                  </div>
+                  <div class="project-meta-labels">
+                    <span class="project-badge badge-ai">Pipeline &amp; Media</span>
+                    <span class="project-status-pill autonomous">
+                      <span class="f-status-dot pulse-amber"></span>
+                      <span>Autonomous Pipeline</span>
+                    </span>
+                  </div>
+                </div>
+
                 <div class="project-links-quick">
-                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source" aria-label="GitHub Repository">
+                  <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="GitHub Repository" aria-label="GitHub Repository">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
-                  <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="icon-link" title="YouTube Channel" aria-label="YouTube Channel">
+                  <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="icon-link-glass" title="YouTube Channel" aria-label="YouTube Channel">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                   </a>
                 </div>
               </div>
+
               <h3 class="project-title">LeetCode AI Studio Pipeline</h3>
-              <div class="project-tagline">Autonomous Multi-Stage Algorithmic Content & Video Generation</div>
+              <div class="project-tagline">Autonomous Multi-Stage Algorithmic Content &amp; Video Generation</div>
+              
               <p class="project-description">
-                An automated Python pipeline that parses daily LeetCode algorithmic challenges, validates solutions, generates AI voiceover narration, and orchestrates rendering.
+                An automated Python pipeline that parses daily LeetCode algorithmic challenges, validates solutions, generates AI voiceover narration, and orchestrates video rendering.
               </p>
-              <ul class="project-highlights">
-                <li>Automated problem extraction, testcase verification, and optimal Big-O complexity analysis.</li>
-                <li>Dynamic scene builder with timed code highlights, subtitle generation, and video composition.</li>
-                <li>Modular batch processor designed for zero-touch daily publishing.</li>
-              </ul>
+
+              <div class="project-features-list">
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Autonomous Extraction:</strong> Scrapes problem descriptions, constraints, and verified testcases.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Optimal Complexity Reasoning:</strong> LLM engine analyzing time/space Big-O complexities and test boundaries.</span>
+                </div>
+                <div class="p-feature-item">
+                  <span class="p-feature-dot"></span>
+                  <span><strong>Audio &amp; Code Compositor:</strong> Dynamic TTS narration synchronized with timed syntax highlights and scene rendering.</span>
+                </div>
+              </div>
             </div>
+
             <div class="project-card-bottom">
               <div class="project-tech-stack">
-                <span class="tech-tag">Python 3</span>
-                <span class="tech-tag">Gemini LLM API</span>
-                <span class="tech-tag">TTS Audio Engine</span>
-                <span class="tech-tag">Video Compositor</span>
-                <span class="tech-tag">Automation</span>
+                <span class="tech-tag"><span class="chip-icon">🐍</span> Python 3</span>
+                <span class="tech-tag"><span class="chip-icon">✨</span> Gemini LLM</span>
+                <span class="tech-tag"><span class="chip-icon">🎙️</span> TTS Engine</span>
+                <span class="tech-tag"><span class="chip-icon">🎬</span> Video Compositor</span>
+                <span class="tech-tag"><span class="chip-icon">⚡</span> Batch Scripts</span>
               </div>
               <div class="project-actions-row">
-                <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="btn-project-live" style="background: rgba(255, 77, 77, 0.15); border-color: rgba(255, 77, 77, 0.35); color: #ff5252;">
+                <a href="https://www.youtube.com/@codebytushu" target="_blank" rel="noopener noreferrer" class="btn-project-live red-accent">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                   <span>YouTube Channel</span>
                 </a>
                 <a href="https://github.com/Tushpendra-Kumar" target="_blank" rel="noopener noreferrer" class="btn-project-code">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  <span>GitHub Code</span>
+                  <span>View Code</span>
                 </a>
               </div>
             </div>

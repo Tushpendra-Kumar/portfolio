@@ -468,4 +468,54 @@ document.addEventListener("DOMContentLoaded", () => {
     resize();
     loop();
   }
+
+  // 9. Hero Dynamic Role Typewriter Engine
+  initHeroTypewriter();
+
+  function initHeroTypewriter() {
+    const typewriterEl = document.getElementById("heroTypewriter");
+    if (!typewriterEl) return;
+
+    const phrases = [
+      "Software Developer • Full-Stack • AI Systems",
+      "MERN Platforms & Scalable Cloud Architectures",
+      "LLM Integrations (Gemini & OpenAI API)",
+      "Linux, DevOps & Automated Pipelines",
+      "Founder & Tech Creator @ CodeByTushu"
+    ];
+
+    let phraseIdx = 0;
+    let charIdx = phrases[0].length;
+    let isDeleting = true;
+    let typingSpeed = 70;
+
+    function type() {
+      const currentPhrase = phrases[phraseIdx];
+
+      if (isDeleting) {
+        typewriterEl.textContent = currentPhrase.substring(0, charIdx - 1);
+        charIdx--;
+        typingSpeed = 28;
+      } else {
+        typewriterEl.textContent = currentPhrase.substring(0, charIdx + 1);
+        charIdx++;
+        typingSpeed = 60;
+      }
+
+      if (!isDeleting && charIdx === currentPhrase.length) {
+        // Full phrase typed, pause so user can read
+        typingSpeed = 2400;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        typingSpeed = 380;
+      }
+
+      setTimeout(type, typingSpeed);
+    }
+
+    // Start cycling after initial reading pause of 2.2 seconds
+    setTimeout(type, 2200);
+  }
 });

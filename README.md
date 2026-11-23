@@ -4,14 +4,14 @@
 ### Production-Grade Full-Stack & AI Systems Engineering Portfolio
 #### *Engineered with Apple Liquid Glass UI, macOS Frosted Glass & Bento Grid Architecture*
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://portfolio-plum-six-32.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://portfolio-tushpendra-29.vercel.app)
 [![Open For Hire](https://img.shields.io/badge/Status-Open%20For%20Immediate%20Hire-00c853?style=for-the-badge&logo=statuspage)](mailto:tushpendrakumar@gmail.com)
 [![Class of 2026](https://img.shields.io/badge/B.Tech%20IT-Class%20of%202026-38bdf8?style=for-the-badge&logo=googlechrome)](https://github.com/Tushpendra-Kumar)
 [![CodeByTushu](https://img.shields.io/badge/Founder-CodeByTushu.com-fa2d48?style=for-the-badge&logo=youtube)](https://www.youtube.com/@codebytushu)
 
 <br/>
 
-**[🌐 View Live Portfolio](https://portfolio-plum-six-32.vercel.app)** &bull; **[📄 Download Resume (PDF)](./assets/Tushpendra_Kumar_Resume.pdf)** &bull; **[📬 Email Me](mailto:tushpendrakumar@gmail.com)**
+**[🌐 View Live Portfolio](https://portfolio-tushpendra-29.vercel.app)** &bull; **[📄 Download Resume (PDF)](./assets/Tushpendra_Kumar_Resume.pdf)** &bull; **[📬 Email Me](mailto:tushpendrakumar@gmail.com)**
 
 ---
 
